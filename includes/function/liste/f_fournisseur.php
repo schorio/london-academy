@@ -14,6 +14,16 @@
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
 	}
+    if(isset($_POST['supprimer_frn'])){
+		// sql to delete a record
+		$supprimer_id = $_POST['supprimer_id'];
+		$sql = "DELETE FROM fournisseur WHERE id_frn='$supprimer_id' ";
+		if ($conn->query($sql) === TRUE) {
+			echo '<script>window.location.href="/epn/liste/fournisseur/fournisseur.php"</script>';
+		} else {
+			echo "Error";
+		}
+	}
 
 
 
