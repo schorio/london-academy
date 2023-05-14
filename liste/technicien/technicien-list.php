@@ -107,7 +107,7 @@
 								<table class="table table-striped custom-table datatable" id="myTable">
 									<thead>
 										<!-- <tr> -->
-										<th>Nom</th>
+										<th>Nom et prenom(s)</th>
 										<th>Fonction</th>
 										<th>Nombre de sortie</th>
 										<th>Observation</th>
