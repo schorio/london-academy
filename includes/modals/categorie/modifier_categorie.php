@@ -1,4 +1,4 @@
-<div id="modifier_categorie<?php echo $id_categorie; ?>" class="modal custom-modal fade" role="dialog">
+<div id="modifier_categorie<?php echo htmlentities($row->id_cat); ?>" class="modal custom-modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -9,10 +9,18 @@
 			</div>
 			<div class="modal-body">
 				<form method="post">
-					<input type="hidden" name="edit_id" value="<?php echo $id_categorie; ?>">
+					<input type="hidden" name="modifier_id" value="<?php echo htmlentities($row->id_cat); ?>">
 					<div class="form-group">
-						<label>Code du categorie<span class="text-danger">*</span></label>
-						<input class="form-control" name="n_code_categorie" value="<?php echo $code_categorie; ?>" type="text">
+						<label>Nom du categorie : </label>
+						<input class="form-control" name="n_libelle_cat" value="<?php echo htmlentities($row->libelle_cat); ?>" type="text">
+					</div>
+					<div class="form-group">
+						<label>Quantité : </label>
+						<input class="form-control" name="n_quantite_cat" value="<?php echo htmlentities($row->quantite_cat); ?>" type="text" readonly>
+					</div>
+					<div class="form-group">
+						<label>Observation : </label>
+						<input class="form-control" name="n_observation_cat" value="<?php echo htmlentities($row->observation_cat); ?>" type="text">
 					</div>
 					<div class="submit-section">
 						<button name="modifier_cat" type="submit" class="btn btn-primary submit-btn">Sauvegarder</button>
