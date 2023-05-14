@@ -1,4 +1,4 @@
-<div id="delete_categorie<?php echo $id_categorie; ?>" class="modal custom-modal fade" role="dialog">
+<div id="supprimer_categorie<?php echo $id_categorie; ?>" class="modal custom-modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-centered">
 		<form method="post">
 			<!-- Modal content-->
@@ -16,7 +16,7 @@
 								<a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Annuler</a>
 							</div>
 							<div class="col-6">
-								<button type="submit" name="delete_categorie" class="btn btn-primary continue-btn">Supprimer</button>
+								<button type="submit" name="supprimer_cat" class="btn btn-primary continue-btn">Supprimer</button>
 							</div>
 						</div>
 					</div>

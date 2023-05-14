@@ -2,13 +2,9 @@
 	session_start();
 	error_reporting(0);
 	include_once('../../includes/config.php');
-	include_once('../../includes/functions.php');
-	if(strlen($_SESSION['userlogin'])==0){
-		header('location: ../../login.php');
-	}
+	include_once('../../includes/function/liste/f_categorie.php');
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,7 +14,7 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title>Listes des categorie</title>
+        <title>Categorie</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/EPN.png">
@@ -71,25 +67,21 @@
 							<div class="col">
 								<h3 class="page-title">Categorie</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item active">Listes</li>
-									<li class="breadcrumb-item"><a href="">Liste des categories</a></li>
+								<li class="breadcrumb-item">Listes</li>
+									<li class="breadcrumb-item active"><a href="">Listes des categories</a></li>
 								</ul>
 							</div>
-
-							<?php if ($_SESSION["role"] === $config["ROLES"][0]) :?>
 								<div class="col-auto float-right ml-auto">
-									<a href="#" class="btn add-btn" data-toggle="modal" data-target="#add_categorie"><i class="fa fa-plus"></i> Ajouter un categorie</a>
+									<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_categorie"><i class="fa fa-plus"></i> Ajouter un categorie</a>
 								</div>
-							<?php endif ?>
-
 						</div>
 					</div>
 					<!-- /Page Header -->
 					
 					<!-- user profiles list starts her -->
-					<div class="row staff-grid-row">
-						<?php
-										$sql = "SELECT * FROM categorie ORDER BY code_categorie ASC";
+					<div class="row">
+								<?php
+										$sql = "SELECT * FROM categorie";
 										$query = $dbh->prepare($sql);
 										$query->execute();
 										$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -98,32 +90,40 @@
 										{
 										foreach($results as $row)
 										{	
-											$id_categorie = htmlentities($row->id_categorie);
-											$code_categorie = htmlentities($row->code_categorie);
+											
 									?>
-						<div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
-							<div class="profile-widget">
-								<div class="profile-img">
-									<a href="list_par_categorie.php?code_c=<?php echo $code_categorie ?>" class="avatar"><img src="/epn/assets/img/DGFAG.png" alt="image"></a>
-								</div>
+								<div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
+									<div class="card">
+										<div class="card-body">
 
-								<?php if ($_SESSION["role"] === $config["ROLES"][0]) :?>
-									<div class="dropdown profile-action">
-										<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-										<div class="dropdown-menu dropdown-menu-right">
-											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_categorie<?php echo $id_categorie ?>"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
-											<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_categorie<?php echo $id_categorie ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+												<div class="dropdown dropdown-action profile-action">
+													<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_categorie<?php echo htmlentities($row->id_cat); ?>"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_categorie<?php echo htmlentities($row->id_cat); ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+													</div>
+												</div>
+											
+											<h3 class="project-title">
+
+													<?php echo htmlentities($row->libelle_cat); ?>
+
+											</h3><br><br><br>
+											<p>
+												<span class="text-muted"><?php echo htmlentities($row->quantite_cat); ?></span>
+												<small class="block text-ellipsis m-b-15">
+													<span class="text-xs">produit(s)</span>
+												</small>
+											</p>
+
+											<p class="m-b-5">Observation : <span class="text-success float-right"><?php echo htmlentities($row->observation_cat); ?></span></p>
 										</div>
 									</div>
-								<?php endif ?>
-								
-								<h4 class="user-name m-t-10 mb-0 text-ellipsis"><a href="list_par_categorie.php?code_c=<?php echo $code_categorie ?>"><?php echo htmlentities($row->code_categorie); ?></a></h4>
-							</div>
-						</div>	
+								</div>	
 						<?php
 						
-						include("../../includes/modals/categorie/Modifier_categorie.php");
 						include("../../includes/modals/categorie/supprimer_categorie.php");
+						include("../../includes/modals/categorie/modifier_categorie.php");
 
 						$cnt +=1; 
     }

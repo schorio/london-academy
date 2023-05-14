@@ -1,4 +1,4 @@
-<div id="edit_categorie<?php echo $id_categorie; ?>" class="modal custom-modal fade" role="dialog">
+<div id="modifier_categorie<?php echo $id_categorie; ?>" class="modal custom-modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -15,7 +15,7 @@
 						<input class="form-control" name="n_code_categorie" value="<?php echo $code_categorie; ?>" type="text">
 					</div>
 					<div class="submit-section">
-						<button name="modifier_categorie" type="submit" class="btn btn-primary submit-btn">Sauvegarder</button>
+						<button name="modifier_cat" type="submit" class="btn btn-primary submit-btn">Sauvegarder</button>
 					</div>
 				</form>
 			</div>

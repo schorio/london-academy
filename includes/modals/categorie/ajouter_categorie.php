@@ -1,4 +1,4 @@
-<div id="add_categorie" class="modal custom-modal fade" role="dialog">
+<div id="ajouter_categorie" class="modal custom-modal fade" role="dialog">
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
@@ -14,7 +14,7 @@
 										<input name="code_categorie" required class="form-control" type="text">
 									</div>
 									<div class="submit-section">
-										<button name="ajouter_categorie" type="POST" class="btn btn-primary submit-btn">Valider</button>
+										<button name="ajouter_cat" type="POST" class="btn btn-primary submit-btn">Valider</button>
 									</div>
 								</form>
 							</div>
