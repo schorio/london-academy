@@ -13,4 +13,15 @@
 		}
 	}
 
+
+    if(isset($_POST['supprimer_cat'])){
+		// sql to delete a record
+		$supprimer_id = $_POST['supprimer_id'];
+		$sql = "DELETE FROM categorie WHERE id_cat='$supprimer_id' ";
+		if ($conn->query($sql) === TRUE) {
+			echo '<script>window.location.href="/epn/liste/categorie/categorie.php"</script>';
+		} else {
+			echo "<script>alert('Une erreur s'est survenue');</script>";
+		}
+	}
 ?>

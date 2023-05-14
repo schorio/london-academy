@@ -10,7 +10,7 @@
 							<p>Voulez vous vraiment supprimer le categorie <strong><?php echo htmlentities($row->libelle_cat); ?></strong> ?</p>
 					</div>
 					<div class="modal-btn delete-action">
-						<input type="hidden" name="delete_id" value="<?php echo htmlentities($row->id_cat); ?>">
+						<input type="hidden" name="supprimer_id" value="<?php echo htmlentities($row->id_cat); ?>">
 						<div class="row">
 							<div class="col-6">
 								<a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Annuler</a>
