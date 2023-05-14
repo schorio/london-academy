@@ -118,41 +118,46 @@
 									<?php
 
 										$sql = "SELECT * FROM technicien";
-										
-										$result = mysqli_query($link, $sql);
-										
-										while($row = mysqli_fetch_array($result))
+										$query = $dbh->prepare($sql);
+										$query->execute();
+										$results=$query->fetchAll(PDO::FETCH_OBJ);
+										$cnt=1;
+										if($query->rowCount() > 0)
 										{
+											foreach($results as $row)
+											{	
 
-											echo '	
-													<tr>
-														<td>
-															<h2 class="table-avatar">
-																<a href="/epn/profile.php?id='.$row["id_tech"].'" class="avatar"><img alt="image" src="/epn/assets/img/technicien/'.$row["image_tech"].'"></a>
-																<a href="/epn/profile.php?id='.$row["id_tech"].' ">'.$row["libelle_tech"].'<span>'.$row["libelle_tech"].'</span></a>
-															</h2>
-														</td>														
-														<td>indisponible</td>
-														<td>'.$row["nbSortie_tech"].'</td>
-														<td>'.$row["observation_tech"].'</td>
-														<td class="text-right">
-															<div class="dropdown dropdown-action">
-																<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-																<div class="dropdown-menu dropdown-menu-right">
-																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_technicien'.$row["id_tech"].'"><i class="fa fa-trash-o m-r-5"></i> Modifier</a>
-																	<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_technicien'.$row["id_tech"].'"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
-																</div>
-															</div>
-														</td>
-													</tr>
-												 ';
+									?>	
+										<tr>
+											<td>
+												<h2 class="table-avatar">
+													<a href="/epn/profile.php?id=<?php echo htmlentities($row->id_tech); ?>" class="avatar"><img alt="image" src="/epn/assets/img/technicien/<?php echo htmlentities($row->image_tech); ?>"></a>
+													<a href="/epn/profile.php?id=<?php echo htmlentities($row->id_tech); ?> "> <?php echo htmlentities($row->libelle_tech); ?><span><?php echo htmlentities($row->libelle_tech); ?></span></a>
+												</h2>
+											</td>														
+											<td>indisponible</td>
+											<td><?php echo htmlentities($row->nbSortie_tech); ?></td>
+											<td><?php echo htmlentities($row->observation_tech); ?></td>
+											<td class="text-right">
+												<div class="dropdown dropdown-action">
+													<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_technicien<?php echo htmlentities($row->id_tech); ?>"><i class="fa fa-trash-o m-r-5"></i> Modifier</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_technicien<?php echo htmlentities($row->id_tech); ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+													</div>
+												</div>
+											</td>
+										</tr>
 											
-											include("../../includes/modals/technicien/modifier_technicien.php");			
-											include("../../includes/modals/technicien/supprimer_technicien.php");
+									<?php
+						
+										include("../../includes/modals/technicien/modifier_technicien.php");			
+										include("../../includes/modals/technicien/supprimer_technicien.php");
 
-										}
-
-									?>
+												}
+										$cnt +=1; 
+											}
+									?>	
 									</tbody>
 
 								</table>
