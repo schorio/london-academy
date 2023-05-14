@@ -24,6 +24,20 @@
 			echo "Error";
 		}
 	}
+    if(isset($_POST['modifier_frn'])){
+		$modifier_id = $_POST['modifier_id'];
+		$n_libelle_frn = $_POST['n_libelle_frn'];
+		$n_observation_frn = $_POST['n_observation_frn'];
+		$sql = "UPDATE fournisseur SET 
+			libelle_frn='$n_libelle_frn',
+			observation_frn='$n_observation_frn'
+			WHERE id_frn='$modifier_id' ";
+		if ($conn->query($sql) === TRUE) {
+			echo '<script>window.location.href="/epn/liste/fournisseur/fournisseur.php"</script>';
+		} else {
+			echo "Error";
+		}
+	}
 
 
 
