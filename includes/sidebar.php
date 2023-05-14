@@ -26,6 +26,9 @@
 							<li> 
 								<a href="/epn/liste/categorie/categorie.php"><i class="la la-productor"></i> <span>Categorie</span></a>
 							</li>
+							<li> 
+								<a href="/epn/liste/technicien/technicien.php"><i class="la la-productor"></i> <span>Technicien</span></a>
+							</li>
 							<li class="submenu">
 								<a href="#" class="noti-dot"><i class="la la-user"></i> <span> Listes</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
