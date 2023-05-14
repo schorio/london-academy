@@ -3,7 +3,7 @@
 $config = [
     "URL" => "http://localhost/epn/",
     "DB_HOST" => "localhost",
-    "DB_NAME" => "epn_bdd",
+    "DB_NAME" => "e-stock",
     "DB_USER" => "root",
     "DB_PASSWORD" => "",
     "ROLES" => ["admin","visiteur"],
