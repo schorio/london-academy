@@ -8,12 +8,13 @@
 		$query->execute();
 		$lastInsert = $dbh->lastInsertId();
 		if($lastInsert>0){
-			echo "<script>alert('Le nouveau fournisseur est ajouter avec succes');</script>";
 			echo "<script>window.location.href='/epn/liste/fournisseur/fournisseur.php';</script>";
 		}else{
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
 	}
+
+
     if(isset($_POST['supprimer_frn'])){
 		// sql to delete a record
 		$supprimer_id = $_POST['supprimer_id'];
@@ -21,9 +22,11 @@
 		if ($conn->query($sql) === TRUE) {
 			echo '<script>window.location.href="/epn/liste/fournisseur/fournisseur.php"</script>';
 		} else {
-			echo "Error";
+			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
 	}
+
+
     if(isset($_POST['modifier_frn'])){
 		$modifier_id = $_POST['modifier_id'];
 		$n_libelle_frn = $_POST['n_libelle_frn'];
@@ -35,7 +38,7 @@
 		if ($conn->query($sql) === TRUE) {
 			echo '<script>window.location.href="/epn/liste/fournisseur/fournisseur.php"</script>';
 		} else {
-			echo "Error";
+			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
 	}
 
