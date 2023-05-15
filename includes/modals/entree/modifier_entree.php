@@ -1,105 +1,78 @@
-<div id="modifier_inventaire<?php echo htmlentities($row->id_inv); ?>" class="modal custom-modal fade" role="dialog">
+<div id="modifier_entree<?php echo htmlentities($row->id_ent); ?>" class="modal custom-modal fade" role="dialog">
 	<div class="modal-dialog modal-dialog-centered modal-lg">
 		<!-- Modal content-->
 		<div class="modal-content">
 			<form method="POST" enctype="multipart/form-data">
 				<div class="modal-header">
-					<h5 class="modal-title">Modifier un inventaire</h5>
+					<h5 class="modal-title">Modifier un entree</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<input type="hidden" name="modifier_id" value="<?php echo htmlentities($row->id_inv); ?>">
+					<input type="hidden" name="modifier_id" value="<?php echo htmlentities($row->id_ent); ?>">
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="form-group">
-								<label for="piece_inv">Nom du produit : </label>
-								<input type="text" class="form-control" id="n_piece_inv" name="n_piece_inv" value="<?php echo htmlentities($row->piece_inv); ?>" required>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label for="n_fournisseur_inv">Fournisseur : </label>
-								<select required name="n_fournisseur_inv" class="select action">
-									<option value="<?php echo htmlentities($row->fournisseur_inv); ?>">
-										<?php echo htmlentities($row->fournisseur_inv); ?>
-									</option>
+								<label for="piece_ent">Produit : </label>
+								<select required name="n_piece_ent" class="select action">
+									<option value="<?php echo htmlentities($row->piece_inv); ?>"><?php echo htmlentities($row->piece_ent); ?></option>
 									<?php 
-										$sql2 = "SELECT * from fournisseur";
+										$sql2 = "SELECT * from inventaire";
 										$query2 = $dbh -> prepare($sql2);
 										$query2->execute();
 										$result2=$query2->fetchAll(PDO::FETCH_OBJ);
-										foreach($result2 as $row_frn)
+										foreach($result2 as $row_inv)
 										{          
 									?>  
-										<option value="<?php echo htmlentities($row_frn->id_frn);?>">
-											<?php echo htmlentities($row_frn->libelle_frn);?>
-										</option>
+										<option value="<?php echo htmlentities($row_inv->id_inv);?>">
+									<?php echo htmlentities($row_inv->piece_inv);?></option>
 									<?php
 										} 
 									?> 
 								</select>
 							</div>
 						</div>
-						<div class="col-sm-6">
+						<div class="col-sm-9">
 							<div class="form-group">
-								<label for="n_categorie_inv">categorie : </label>
-								<select required name="n_categorie_inv" class="select action">
-									<option value="<?php echo htmlentities($row->categorie_inv); ?>">
-										<?php echo htmlentities($row->categorie_inv); ?>
-									</option>
-									<?php 
-										$sql2 = "SELECT * from categorie";
-										$query2 = $dbh -> prepare($sql2);
-										$query2->execute();
-										$result2=$query2->fetchAll(PDO::FETCH_OBJ);
-										foreach($result2 as $row_cat)
-										{          
-									?>  
-									<option value="<?php echo htmlentities($row_cat->id_cat);?>">
-										<?php echo htmlentities($row_cat->libelle_cat);?>
-									</option>
-									<?php
-										} 
-									?> 
-								</select>
+								<label for="reference_ent">Reference : </label>
+								<input type="text" class="form-control" id="reference_ent" name="n_reference_ent" value="<?php echo htmlentities($row->reference_ent); ?>" autofocus>
 							</div>
 						</div>
-						<div class="col-sm-12">
+						<div class="col-sm-3">
 							<div class="form-group">
-								<label for="n_description_inv">Description : </label>
-								<input type="text" class="form-control" id="n_description_inv" name="n_description_inv" value="<?php echo htmlentities($row->description_inv); ?>" autofocus>
+								<label for="quantite_ent">Quantite :</label>
+								<input type="number" class="form-control" id="quantite_ent" name="n_quantite_ent" value="<?php echo htmlentities($row->quantite_ent); ?>" autofocus>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
-								<label for="si_inv">Stock initial</label>
-								<input type="text" class="form-control" id="n_si_inv" name="n_si_inv" value="<?php echo htmlentities($row->si_inv); ?>" readonly>
+								<label for="pu_ent">Prix unitaire : </label>
+								<input type="text" class="form-control" id="pu_ent" name="n_pu_ent" value="<?php echo htmlentities($row->pu_ent); ?>" autofocus>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
-								<label for="sa_inv">actuel : </label>
-								<input type="text" class="form-control" id="n_sa_inv" name="n_si_inv" value="<?php echo htmlentities($row->sa_inv); ?>" readonly>
+								<label for="montant_ent">Montant : </label>
+								<input type="text" class="form-control" id="montant_ent" name="n_montant_ent" value="<?php echo htmlentities($row->montant_ent); ?>" autofocus>
 							</div>
 						</div>
-						<div class="col-sm-12">
+						<div class="col-sm-3">
 							<div class="form-group">
-								<label for="n_stockage_inv">Stockage : </label>
-								<input type="text" class="form-control" id="n_stockage_inv" name="n_stockage_inv" value="<?php echo htmlentities($row->stockage_inv); ?>" autofocus>
+								<label for="date_ent">Date d'entrée : </label>
+								<input type="date" class="form-control" id="date_ent" name="n_date_ent" value="<?php echo htmlentities($row->date_ent); ?>" autofocus>
 							</div>
 						</div>
-						<div class="col-sm-12">
+						<div class="col-sm-9">
 							<div class="form-group">
-								<label for="n_observation_inv">Observation : </label>
-								<input type="text" class="form-control" id="n_observation_inv" name="n_observation_inv" value="<?php echo htmlentities($row->observation_inv); ?>" autofocus>
+								<label for="observation_ent">Observation : </label>
+								<input type="text" class="form-control" id="observation_ent" name="n_observation_ent" value="<?php echo htmlentities($row->observation_ent); ?>" autofocus>
 							</div>
 						</div>
 					</div>
 					
 					<div class="submit-section">
-						<button type="submit" class="btn btn-primary submit-btn" name="modifier_inv">Valider</button>
+						<button type="submit" class="btn btn-primary submit-btn" name="modifier_ent">Valider</button>
 					</div>
 				</div>
 			</form>
