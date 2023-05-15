@@ -35,6 +35,9 @@
 							<li> 
 								<a href="/epn/liste/entree/entree.php"><i class="la la-productor"></i> <span>Entrée</span></a>
 							</li>
+							<li> 
+								<a href="/epn/liste/sortie/sortie.php"><i class="la la-productor"></i> <span>Sortie</span></a>
+							</li>
 							<!-- <li class="submenu">
 								<a href="#" class="noti-dot"><i class="la la-user"></i> <span> Listes</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
