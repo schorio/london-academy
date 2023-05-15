@@ -15,13 +15,13 @@
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="piece_inv">Nom du produit : </label>
-								<input type="text" class="form-control" id="piece_inv" name="piece_inv" value="<?php echo htmlentities($row->piece_inv); ?>" required>
+								<input type="text" class="form-control" id="piece_inv" name="n_piece_inv" value="<?php echo htmlentities($row->piece_inv); ?>" required>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
-								<label for="fournisseur_inv">Fournisseur : </label>
-								<select required name="fournisseur_inv" class="select action">
+								<label for="n_fournisseur_inv">Fournisseur : </label>
+								<select required name="n_fournisseur_inv" class="select action">
 									<option value="<?php echo htmlentities($row->fournisseur_inv); ?>">
 										<?php echo htmlentities($row->fournisseur_inv); ?>
 									</option>
@@ -44,8 +44,8 @@
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
-								<label for="categorie_inv">categorie : </label>
-								<select required name="categorie_inv" class="select action">
+								<label for="n_categorie_inv">categorie : </label>
+								<select required name="n_categorie_inv" class="select action">
 									<option value="<?php echo htmlentities($row->categorie_inv); ?>">
 										<?php echo htmlentities($row->categorie_inv); ?>
 									</option>
@@ -69,31 +69,31 @@
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="description_inv">Description : </label>
-								<input type="text" class="form-control" id="description_inv" name="description_inv" value="<?php echo htmlentities($row->description_inv); ?>" autofocus>
+								<input type="text" class="form-control" id="description_inv" name="n_description_inv" value="<?php echo htmlentities($row->description_inv); ?>" autofocus>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="si_inv">Stock initial</label>
-								<input type="text" class="form-control" id="si_inv" name="si_inv" value="<?php echo htmlentities($row->si_inv); ?>" readonly>
+								<input type="text" class="form-control" id="si_inv" name="n_si_inv" value="<?php echo htmlentities($row->si_inv); ?>" readonly>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="sa_inv">actuel : </label>
-								<input type="text" class="form-control" id="sa_inv" name="si_inv" value="<?php echo htmlentities($row->sa_inv); ?>" readonly>
+								<input type="text" class="form-control" id="sa_inv" name="n_si_inv" value="<?php echo htmlentities($row->sa_inv); ?>" readonly>
 							</div>
 						</div>
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="stockage_inv">Stockage : </label>
-								<input type="text" class="form-control" id="stockage_inv" name="stockage_inv" value="<?php echo htmlentities($row->stockage_inv); ?>" autofocus>
+								<input type="text" class="form-control" id="stockage_inv" name="n_stockage_inv" value="<?php echo htmlentities($row->stockage_inv); ?>" autofocus>
 							</div>
 						</div>
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="stockage_inv">Observation : </label>
-								<input type="text" class="form-control" id="observation_inv" name="observation_inv" value="<?php echo htmlentities($row->observation_inv); ?>" autofocus>
+								<input type="text" class="form-control" id="observation_inv" name="n_observation_inv" value="<?php echo htmlentities($row->observation_inv); ?>" autofocus>
 							</div>
 						</div>
 					</div>
