@@ -18,7 +18,7 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title> Listes des techniciens</title>
+        <title> Listes des inventaires</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/EPN.png">
@@ -72,17 +72,17 @@
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
-								<h3 class="page-title">Technicien</h3>
+								<h3 class="page-title">Inventaire</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Listes</a></li>
-									<li class="breadcrumb-item active">Listes des techniciens</li>
+									<li class="breadcrumb-item active">Listes des inventaires</li>
 								</ul>
 							</div>
 							<div class="col-auto float-right ml-auto">
-								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_technicien"><i class="fa fa-plus"></i> Ajouter un(e) technicien(ne)</a>
+								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_inventaire"><i class="fa fa-plus"></i> Ajouter un(e) inventaire</a>
 								<div class="view-icons">
-									<a href="technicien.php" title="Grid View" class="grid-view btn btn-link active"><i class="fa fa-th"></i></a>
-									<a href="technicien-list.php" title="Tabular View" class="list-view btn btn-link"><i class="fa fa-bars"></i></a>
+									<a href="inventaire.php" title="Grid View" class="grid-view btn btn-link active"><i class="fa fa-th"></i></a>
+									<a href="inventaire-list.php" title="Tabular View" class="list-view btn btn-link"><i class="fa fa-bars"></i></a>
 								</div>
 							</div>
 						</div>
@@ -107,9 +107,13 @@
 								<table class="table table-striped custom-table datatable" id="myTable">
 									<thead>
 										<!-- <tr> -->
-										<th>Nom et prenom(s)</th>
-										<th>Fonction</th>
-										<th>Nombre de sortie</th>
+										<th>Nom et fournisseur</th>
+										<th>Categorie</th>
+										<th>Stock initial</th>
+										<th>Stock actuel</th>
+										<th>Description</th>
+										<th>Quantité entrée</th>
+										<th>Quantité sortie</th>
 										<th>Observation</th>
 										<th class="text-right no-sort">Action</th>
 										<!-- </tr> -->
@@ -117,7 +121,7 @@
 									<tbody>
 									<?php
 
-										$sql = "SELECT * FROM technicien";
+										$sql = "SELECT * FROM inventaire";
 										$query = $dbh->prepare($sql);
 										$query->execute();
 										$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -131,19 +135,22 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="/epn/profile.php?id=<?php echo htmlentities($row->id_tech); ?>" class="avatar"><img alt="image" src="/epn/assets/img/technicien/<?php echo htmlentities($row->image_tech); ?>"></a>
-													<a href="/epn/profile.php?id=<?php echo htmlentities($row->id_tech); ?> "> <?php echo htmlentities($row->libelle_tech); ?><span><?php echo htmlentities($row->libelle_tech); ?></span></a>
+													<a href="/epn/profile.php?id=<?php echo htmlentities($row->id_inv); ?> "> <?php echo htmlentities($row->piece_inv); ?><span><?php echo htmlentities($row->fournisseur_inv); ?></span></a>
 												</h2>
 											</td>														
-											<td>indisponible</td>
-											<td><?php echo htmlentities($row->nbSortie_tech); ?></td>
-											<td><?php echo htmlentities($row->observation_tech); ?></td>
+											<td><?php echo htmlentities($row->categorie_inv); ?></td>
+											<td><?php echo htmlentities($row->si_inv); ?></td>
+											<td><?php echo htmlentities($row->sa_inv); ?></td>
+											<td><?php echo htmlentities($row->description_inv); ?></td>
+											<td><?php echo htmlentities($row->entree_inv); ?></td>
+											<td><?php echo htmlentities($row->sortie_inv); ?></td>
+											<td><?php echo htmlentities($row->observation_inv); ?></td>
 											<td class="text-right">
 												<div class="dropdown dropdown-action">
 													<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 													<div class="dropdown-menu dropdown-menu-right">
-														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_technicien<?php echo htmlentities($row->id_tech); ?>"><i class="fa fa-trash-o m-r-5"></i> Modifier</a>
-														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_technicien<?php echo htmlentities($row->id_tech); ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_inventaire<?php echo htmlentities($row->id_inv); ?>"><i class="fa fa-trash-o m-r-5"></i> Modifier</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_inventaire<?php echo htmlentities($row->id_inv); ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
 													</div>
 												</div>
 											</td>
@@ -151,8 +158,8 @@
 											
 									<?php
 						
-										include("../../includes/modals/technicien/modifier_technicien.php");			
-										include("../../includes/modals/technicien/supprimer_technicien.php");
+										include("../../includes/modals/inventaire/modifier_inventaire.php");			
+										include("../../includes/modals/inventaire/supprimer_inventaire.php");
 
 												}
 										$cnt +=1; 
@@ -167,9 +174,9 @@
                 </div>
 				<!-- /Page Content -->
 				
-				<!-- Add technicien Modal -->
-				<?php include_once("../../includes/modals/technicien/ajouter_technicien.php"); ?>
-				<!-- /Add technicien Modal -->
+				<!-- Add inventaire Modal -->
+				<?php include_once("../../includes/modals/inventaire/ajouter_inventaire.php"); ?>
+				<!-- /Add inventaire Modal -->
 				
             </div>
 			<!-- /Page Wrapper -->
@@ -250,8 +257,8 @@
 	<tr>
 		<td>
 			<h2 class="table-avatar">
-				<a href="profile.php?id='.$id_technicien.'" class="avatar"><img alt="image" src="technicien/'.$image.'"></a>
-				<a href="profile.php?id='.$id_technicien.' ">'.$nom.'." ".'.$prenom.'<span>'.$code_departement.'</span></a>
+				<a href="profile.php?id='.$id_inventaire.'" class="avatar"><img alt="image" src="inventaire/'.$image.'"></a>
+				<a href="profile.php?id='.$id_inventaire.' ">'.$nom.'." ".'.$prenom.'<span>'.$code_departement.'</span></a>
 			</h2>
 		</td>
 		<td>'.$matricule.'</td>
@@ -265,8 +272,8 @@
 			<div class="dropdown dropdown-action">
 				<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 				<div class="dropdown-menu dropdown-menu-right">
-					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_technicien'.$id_technicien.'"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
-					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_technicien'.$id_technicien.'"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_inventaire'.$id_inventaire.'"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_inventaire'.$id_inventaire.'"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
 				</div>
 			</div>
 		</td>
