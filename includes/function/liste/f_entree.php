@@ -29,4 +29,16 @@
         }
     }
 
+
+    if(isset($_POST['supprimer_ent'])){
+		// sql to delete a record
+		$supprimer_id = $_POST['supprimer_id'];
+		$sql = "DELETE FROM entree WHERE id_ent='$supprimer_id' ";
+		if ($conn->query($sql) === TRUE) {
+			echo '<script>window.location.href="/epn/liste/entree/entree.php"</script>';
+		} else {
+			echo "<script>alert('Une erreur s'est survenue');</script>";
+		}
+	}
+
 ?>
