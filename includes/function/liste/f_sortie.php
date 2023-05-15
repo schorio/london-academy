@@ -38,5 +38,28 @@
 	}
 
 
+    if(isset($_POST['modifier_sort'])){
+		$modifier_id = htmlspecialchars($_POST['modifier_id']);
+		$n_piece_sort = htmlspecialchars($_POST['n_piece_sort']);
+        $n_technicien_sort = htmlspecialchars($_POST['n_technicien_sort']);
+        $n_quantite_sort = htmlspecialchars($_POST['n_quantite_sort']);
+        $n_date_sort = htmlspecialchars($_POST['n_date_sort']);
+        $n_observation_sort = htmlspecialchars($_POST['n_observation_sort']);
+
+		$sql = "UPDATE sortie SET 
+			piece_sort='$n_piece_sort',
+            technicien_sort='$n_technicien_sort',
+            quantite_sort='$n_quantite_sort',
+            date_sort='$n_date_sort',
+            observation_sort='$n_observation_sort'
+			WHERE id_sort='$modifier_id' ";
+
+		if ($conn->query($sql) === TRUE) {
+			echo '<script>window.location.href="/epn/liste/sortie/sortie.php"</script>';
+		} else {
+			echo "<script>alert('Une erreur s'est survenue');</script>";
+		}
+	}
+
 
 ?>
