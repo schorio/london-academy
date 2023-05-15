@@ -2,7 +2,7 @@
 	session_start();
 	error_reporting(0);
 	include_once('../../includes/config.php');
-	include_once("../../includes/functions.php");
+	include_once('../../includes/function/liste/f_inventaire.php');
 	if(strlen($_SESSION['userlogin'])==0){
 		header('location: ../../login.php');
 	}

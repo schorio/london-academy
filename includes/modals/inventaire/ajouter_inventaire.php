@@ -8,7 +8,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form method="POST">
+				<form method="POST" enctype="multipart/form-data">
 
 					<div class="row">
 						<div class="col-sm-12">
@@ -73,8 +73,8 @@
 						</div>
 						<div class="col-sm-3">
 							<div class="form-group">
-								<label for="categorie_inv">actuel : </label>
-								<input type="text" class="form-control" id="categorie_inv" name="categorie_inv" value="0" readonly>
+								<label for="sa_inv">actuel : </label>
+								<input type="text" class="form-control" id="sa_inv" name="sa_inv" value="0" readonly>
 							</div>
 						</div>
 						<div class="col-sm-12">
