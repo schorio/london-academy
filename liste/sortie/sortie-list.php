@@ -2,7 +2,7 @@
 	session_start();
 	error_reporting(0);
 	include_once('../../includes/config.php');
-	include_once('../../includes/function/liste/f_entree.php');
+	include_once('../../includes/function/liste/f_sortie.php');
 	if(strlen($_SESSION['userlogin'])==0){
 		header('location: ../../login.php');
 	}
@@ -18,7 +18,7 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title> Listes des entrees</title>
+        <title>Les produits sorties</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/EPN.png">
@@ -72,17 +72,17 @@
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
-								<h3 class="page-title">Entrée des produits</h3>
+								<h3 class="page-title">Les produits sorties</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Listes</a></li>
-									<li class="breadcrumb-item active">Listes des entrées des produits</li>
+									<li class="breadcrumb-item active">Listes des produits sorties</li>
 								</ul>
 							</div>
 							<div class="col-auto float-right ml-auto">
-								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_entree"><i class="fa fa-plus"></i> Ajouter un entrée de produit</a>
+								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_sortie"><i class="fa fa-plus"></i> Sortir un produit</a>
 								<div class="view-icons">
-									<a href="entree.php" title="Grid View" class="grid-view btn btn-link active"><i class="fa fa-th"></i></a>
-									<a href="entree-list.php" title="Tabular View" class="list-view btn btn-link"><i class="fa fa-bars"></i></a>
+									<a href="sortie.php" title="Grid View" class="grid-view btn btn-link active"><i class="fa fa-th"></i></a>
+									<a href="sortie-list.php" title="Tabular View" class="list-view btn btn-link"><i class="fa fa-bars"></i></a>
 								</div>
 							</div>
 						</div>
@@ -108,11 +108,9 @@
 									<thead>
 										<!-- <tr> -->
 										<th>Produit</th>
-										<th>Reference</th>
 										<th>Quantité</th>
-										<th>Prix unitaire</th>
-										<th>Montant</th>
-										<th>Date</th>
+										<th>Date de sortie</th>
+										<th>Technicien</th>
 										<th>Observatino</th>
 										<th class="text-right no-sort">Action</th>
 										<!-- </tr> -->
@@ -120,7 +118,7 @@
 									<tbody>
 									<?php
 
-										$sql = "SELECT * FROM entree";
+										$sql = "SELECT * FROM sortie";
 										$query = $dbh->prepare($sql);
 										$query->execute();
 										$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -134,21 +132,19 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="/epn/profile.php?id=<?php echo htmlentities($row->id_ent); ?> "> <?php echo htmlentities($row->piece_ent); ?><span><?php echo htmlentities($row->reference_ent); ?></span></a>
+													<a href="/epn/profile.php?id=<?php echo htmlentities($row->id_sort); ?> "> <?php echo htmlentities($row->piece_sort); ?><span><?php echo htmlentities($row->technicien_sort); ?></span></a>
 												</h2>
 											</td>														
-											<td><?php echo htmlentities($row->reference_ent); ?></td>
-											<td><?php echo htmlentities($row->quantite_ent); ?></td>
-											<td><?php echo htmlentities($row->pu_ent); ?></td>
-											<td><?php echo htmlentities($row->montant_ent); ?></td>
-											<td><?php echo htmlentities($row->date_ent); ?></td>
-											<td><?php echo htmlentities($row->observation_ent); ?></td>
+											<td><?php echo htmlentities($row->quantite_sort); ?></td>
+											<td><?php echo htmlentities($row->date_sort); ?></td>
+											<td><?php echo htmlentities($row->technicien_sort); ?></td>
+											<td><?php echo htmlentities($row->observation_sort); ?></td>
 											<td class="text-right">
 												<div class="dropdown dropdown-action">
 													<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 													<div class="dropdown-menu dropdown-menu-right">
-														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_entree<?php echo htmlentities($row->id_ent); ?>"><i class="fa fa-trash-o m-r-5"></i> Modifier</a>
-														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_entree<?php echo htmlentities($row->id_ent); ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_sortie<?php echo htmlentities($row->id_sort); ?>"><i class="fa fa-trash-o m-r-5"></i> Modifier</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_sortie<?php echo htmlentities($row->id_sort); ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
 													</div>
 												</div>
 											</td>
@@ -156,8 +152,8 @@
 											
 									<?php
 						
-										include("../../includes/modals/entree/modifier_entree.php");			
-										include("../../includes/modals/entree/supprimer_entree.php");
+										include("../../includes/modals/sortie/modifier_sortie.php");			
+										include("../../includes/modals/sortie/supprimer_sortie.php");
 
 												}
 										$cnt +=1; 
@@ -172,9 +168,9 @@
                 </div>
 				<!-- /Page Content -->
 				
-				<!-- Add entree Modal -->
-				<?php include_once("../../includes/modals/entree/ajouter_entree.php"); ?>
-				<!-- /Add entree Modal -->
+				<!-- Add sortie Modal -->
+				<?php include_once("../../includes/modals/sortie/ajouter_sortie.php"); ?>
+				<!-- /Add sortie Modal -->
 				
             </div>
 			<!-- /Page Wrapper -->
@@ -255,8 +251,8 @@
 	<tr>
 		<td>
 			<h2 class="table-avatar">
-				<a href="profile.php?id='.$id_entree.'" class="avatar"><img alt="image" src="entree/'.$image.'"></a>
-				<a href="profile.php?id='.$id_entree.' ">'.$nom.'." ".'.$prenom.'<span>'.$code_departement.'</span></a>
+				<a href="profile.php?id='.$id_sortie.'" class="avatar"><img alt="image" src="sortie/'.$image.'"></a>
+				<a href="profile.php?id='.$id_sortie.' ">'.$nom.'." ".'.$prenom.'<span>'.$code_departement.'</span></a>
 			</h2>
 		</td>
 		<td>'.$matricule.'</td>
@@ -270,8 +266,8 @@
 			<div class="dropdown dropdown-action">
 				<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 				<div class="dropdown-menu dropdown-menu-right">
-					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_entree'.$id_entree.'"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
-					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_entree'.$id_entree.'"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_sortie'.$id_sortie.'"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_sortie'.$id_sortie.'"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
 				</div>
 			</div>
 		</td>
