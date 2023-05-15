@@ -2,7 +2,7 @@
 	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Ajouter une entrée de produit</h5>
+				<h5 class="modal-title">Sortir un produit</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -13,8 +13,8 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="form-group">
-								<label for="piece_ent">Produit : </label>
-								<select id="piece_ent" required name="piece_ent" class="select action">
+								<label for="piece_sort">Produit : </label>
+								<select id="piece_sort" required name="piece_sort" class="select action">
 									<option>Selectionner le produit </option>
 									<?php 
 										$sql2 = "SELECT * from inventaire";
@@ -34,44 +34,47 @@
 						</div>
 						<div class="col-sm-9">
 							<div class="form-group">
-								<label for="reference_ent">Reference : </label>
-								<input type="text" class="form-control" id="reference_ent" name="reference_ent" autofocus>
+								<label for="technicicen_sort">Technicien : </label>
+								<select id="technicicen_sort" required name="technicicen_sort" class="select action">
+									<option>Selectionner le technicien </option>
+									<?php 
+										$sql2 = "SELECT * from technicien";
+										$query2 = $dbh -> prepare($sql2);
+										$query2->execute();
+										$result2=$query2->fetchAll(PDO::FETCH_OBJ);
+										foreach($result2 as $row_tech)
+										{          
+									?>  
+										<option value="<?php echo htmlentities($row_tech->id_tech);?>">
+									<?php echo htmlentities($row_tech->libelle_tech);?></option>
+									<?php
+										} 
+									?> 
+								</select>
 							</div>
 						</div>
 						<div class="col-sm-3">
 							<div class="form-group">
-								<label for="quantite_ent">Quantite :</label>
-								<input type="number" class="form-control" id="quantite_ent" name="quantite_ent" value="0" autofocus>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label for="pu_ent">Prix unitaire : </label>
-								<input type="text" class="form-control" id="pu_ent" name="pu_ent" value="0" autofocus>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label for="montant_ent">Montant : </label>
-								<input type="text" class="form-control" id="montant_ent" name="montant_ent" autofocus>
+								<label for="quantite_sort">Quantite :</label>
+								<input type="number" class="form-control" id="quantite_sort" name="quantite_sort" value="0" autofocus>
 							</div>
 						</div>
 						<div class="col-sm-3">
 							<div class="form-group">
-								<label for="date_ent">Date d'entrée : </label>
-								<input type="date" class="form-control" id="date_ent" name="date_ent" autofocus>
+								<label for="date_sort">Date de sortie : </label>
+								<input type="date" class="form-control" id="date_sort" name="date_sort" autofocus>
 							</div>
 						</div>
 						<div class="col-sm-9">
 							<div class="form-group">
-								<label for="date_ent">Observation : </label>
-								<input type="text" class="form-control" id="observation_ent" name="observation_ent" autofocus>
+								<label for="date_sort">Observation : </label>
+								<input type="text" class="form-control" id="observation_sort" name="observation_sort" autofocus>
 							</div>
 						</div>
 					</div>
 				
 					<div class="submit-section">
-						<button name="ajouter_ent" type="POST" class="btn btn-primary submit-btn">Valider</button>
+						<button name="ajouter_sort" type="POST" class="btn btn-primary submit-btn">Valider</button>
 					</div>
 				</form>
 			</div>
