@@ -68,13 +68,13 @@
 						<div class="col-sm-9">
 							<div class="form-group">
 								<label for="si_inv">Stock initial</label>
-								<input type="text" class="form-control" id="si_inv" name="si_inv" autofocus>
+								<input type="number" class="form-control" id="si_inv" name="si_inv" value="0" autofocus>
 							</div>
 						</div>
 						<div class="col-sm-3">
 							<div class="form-group">
-								<label for="categorie_inv">final : </label>
-								<input type="text" class="form-control" id="categorie_inv" name="categorie_inv" readonly>
+								<label for="categorie_inv">actuel : </label>
+								<input type="text" class="form-control" id="categorie_inv" name="categorie_inv" value="0" readonly>
 							</div>
 						</div>
 						<div class="col-sm-12">
