@@ -11,6 +11,7 @@
 
 		$sql = "INSERT INTO `inventaire` (`piece_inv`, `fournisseur_inv`, `categorie_inv`, `description_inv`, `si_inv`, `sa_inv`, `stockage_inv`) 
                                 VALUES   (:piece_inv, :fournisseur_inv, :categorie_inv, :description_inv, :si_inv, :sa_inv, :stockage_inv)";
+
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':piece_inv',$piece_inv,pdo::PARAM_STR);
         $query->bindParam(':fournisseur_inv',$fournisseur_inv,pdo::PARAM_STR);
@@ -33,6 +34,32 @@
 		// sql to delete a record
 		$supprimer_id = $_POST['supprimer_id'];
 		$sql = "DELETE FROM inventaire WHERE id_inv='$supprimer_id' ";
+		if ($conn->query($sql) === TRUE) {
+			echo '<script>window.location.href="/epn/liste/inventaire/inventaire.php"</script>';
+		} else {
+			echo "<script>alert('Une erreur s'est survenue');</script>";
+		}
+	}
+
+
+    if(isset($_POST['modifier_inv'])){
+		$modifier_id = htmlspecialchars($_POST['modifier_id']);
+		$n_piece_inv = htmlspecialchars($_POST['n_piece_inv']);
+        $n_fournisseur_inv = htmlspecialchars($_POST['n_fournisseur_inv']);
+        $n_categorie_inv = htmlspecialchars($_POST['n_categorie_inv']);
+        $n_description_inv = htmlspecialchars($_POST['n_description_inv']);
+        $n_stockage_inv = htmlspecialchars($_POST['n_stockage_inv']);
+        $n_observation_inv = htmlspecialchars($_POST['n_observation_inv']);
+
+		$sql = "UPDATE inventaire SET 
+			piece_inv='$n_piece_inv',
+            fournisseur_inv='$n_fournisseur_inv',
+            categorie_inv='$n_categorie_inv',
+            description_inv='$n_description_inv',
+            stockage_inv='$n_stockage_inv',
+            observation_inv='$n_observation_inv'
+			WHERE id_inv='$modifier_id' ";
+
 		if ($conn->query($sql) === TRUE) {
 			echo '<script>window.location.href="/epn/liste/inventaire/inventaire.php"</script>';
 		} else {

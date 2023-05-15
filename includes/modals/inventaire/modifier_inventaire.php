@@ -1,8 +1,8 @@
 <div id="modifier_inventaire<?php echo htmlentities($row->id_inv); ?>" class="modal custom-modal fade" role="dialog">
-	<form method="post" class="form-horizontal" role="form">
-		<div class="modal-dialog modal-dialog-centered modal-lg">
-			<!-- Modal content-->
-			<div class="modal-content">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<form method="POST" enctype="multipart/form-data">
 				<div class="modal-header">
 					<h5 class="modal-title">Modifier un inventaire</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -15,7 +15,7 @@
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="piece_inv">Nom du produit : </label>
-								<input type="text" class="form-control" id="piece_inv" name="n_piece_inv" value="<?php echo htmlentities($row->piece_inv); ?>" required>
+								<input type="text" class="form-control" id="n_piece_inv" name="n_piece_inv" value="<?php echo htmlentities($row->piece_inv); ?>" required>
 							</div>
 						</div>
 						<div class="col-sm-6">
@@ -68,32 +68,32 @@
 						</div>
 						<div class="col-sm-12">
 							<div class="form-group">
-								<label for="description_inv">Description : </label>
-								<input type="text" class="form-control" id="description_inv" name="n_description_inv" value="<?php echo htmlentities($row->description_inv); ?>" autofocus>
+								<label for="n_description_inv">Description : </label>
+								<input type="text" class="form-control" id="n_description_inv" name="n_description_inv" value="<?php echo htmlentities($row->description_inv); ?>" autofocus>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="si_inv">Stock initial</label>
-								<input type="text" class="form-control" id="si_inv" name="n_si_inv" value="<?php echo htmlentities($row->si_inv); ?>" readonly>
+								<input type="text" class="form-control" id="n_si_inv" name="n_si_inv" value="<?php echo htmlentities($row->si_inv); ?>" readonly>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="sa_inv">actuel : </label>
-								<input type="text" class="form-control" id="sa_inv" name="n_si_inv" value="<?php echo htmlentities($row->sa_inv); ?>" readonly>
+								<input type="text" class="form-control" id="n_sa_inv" name="n_si_inv" value="<?php echo htmlentities($row->sa_inv); ?>" readonly>
 							</div>
 						</div>
 						<div class="col-sm-12">
 							<div class="form-group">
-								<label for="stockage_inv">Stockage : </label>
-								<input type="text" class="form-control" id="stockage_inv" name="n_stockage_inv" value="<?php echo htmlentities($row->stockage_inv); ?>" autofocus>
+								<label for="n_stockage_inv">Stockage : </label>
+								<input type="text" class="form-control" id="n_stockage_inv" name="n_stockage_inv" value="<?php echo htmlentities($row->stockage_inv); ?>" autofocus>
 							</div>
 						</div>
 						<div class="col-sm-12">
 							<div class="form-group">
-								<label for="stockage_inv">Observation : </label>
-								<input type="text" class="form-control" id="observation_inv" name="n_observation_inv" value="<?php echo htmlentities($row->observation_inv); ?>" autofocus>
+								<label for="n_observation_inv">Observation : </label>
+								<input type="text" class="form-control" id="n_observation_inv" name="n_observation_inv" value="<?php echo htmlentities($row->observation_inv); ?>" autofocus>
 							</div>
 						</div>
 					</div>
@@ -102,8 +102,7 @@
 						<button type="submit" class="btn btn-primary submit-btn" name="modifier_inv">Valider</button>
 					</div>
 				</div>
-				
-			</div>
+			</form>
 		</div>
-	</form>
+	</div>
 </div>			
