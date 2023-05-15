@@ -8,7 +8,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form method="POST">
+				<form id="sampleForm" name="sampleForm" method="POST" enctype="multipart/form-data">
 
 					<div class="form-group">
 						<label>Nom du technicien <span class="text-danger">*</span></label>
@@ -16,11 +16,11 @@
 					</div>
 					<div class="form-group">
 						<label>Image <span class="text-danger">*</span></label>
-						<input name="image_tech" required class="form-control" type="file">
+						<input class="form-control" required name="image_tech" type="file">
 					</div>
 				
 					<div class="submit-section">
-						<button name="ajouter_tech" type="POST" class="btn btn-primary submit-btn">Valider</button>
+						<button name="ajouter_tech" class="btn btn-primary submit-btn">Valider</button>
 					</div>
 				</form>
 			</div>
