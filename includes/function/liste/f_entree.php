@@ -41,4 +41,32 @@
 		}
 	}
 
+
+    if(isset($_POST['modifier_ent'])){
+		$modifier_id = htmlspecialchars($_POST['modifier_id']);
+		$n_piece_ent = htmlspecialchars($_POST['n_piece_ent']);
+        $n_reference_ent = htmlspecialchars($_POST['n_reference_ent']);
+        $n_quantite_ent = htmlspecialchars($_POST['n_quantite_ent']);
+        $n_pu_ent = htmlspecialchars($_POST['n_pu_ent']);
+        $n_montant_ent = htmlspecialchars($_POST['n_montant_ent']);
+        $n_date_ent = htmlspecialchars($_POST['n_date_ent']);
+        $n_observation_ent = htmlspecialchars($_POST['n_observation_ent']);
+
+		$sql = "UPDATE entree SET 
+			piece_ent='$n_piece_ent',
+            reference_ent='$n_reference_ent',
+            quantite_ent='$n_quantite_ent',
+            pu_ent='$n_pu_ent',
+            montant_ent='$n_montant_ent',
+            date_ent='$n_date_ent',
+            observation_ent='$n_observation_ent'
+			WHERE id_ent='$modifier_id' ";
+
+		if ($conn->query($sql) === TRUE) {
+			echo '<script>window.location.href="/epn/liste/entree/entree.php"</script>';
+		} else {
+			echo "<script>alert('Une erreur s'est survenue');</script>";
+		}
+	}
+
 ?>

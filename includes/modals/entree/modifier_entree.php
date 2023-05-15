@@ -15,8 +15,8 @@
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="piece_ent">Produit : </label>
-								<select required name="n_piece_ent" class="select action">
-									<option value="<?php echo htmlentities($row->piece_inv); ?>"><?php echo htmlentities($row->piece_ent); ?></option>
+								<select name="n_piece_ent" class="select action">
+									<option value="<?php echo htmlentities($row->piece_ent); ?>"><?php echo htmlentities($row->piece_ent); ?></option>
 									<?php 
 										$sql2 = "SELECT * from inventaire";
 										$query2 = $dbh -> prepare($sql2);
