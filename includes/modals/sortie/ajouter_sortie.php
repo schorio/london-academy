@@ -34,8 +34,8 @@
 						</div>
 						<div class="col-sm-9">
 							<div class="form-group">
-								<label for="technicicen_sort">Technicien : </label>
-								<select id="technicicen_sort" required name="technicicen_sort" class="select action">
+								<label for="technicien_sort">Technicien : </label>
+								<select id="technicien_sort" required name="technicien_sort" class="select action">
 									<option>Selectionner le technicien </option>
 									<?php 
 										$sql2 = "SELECT * from technicien";
