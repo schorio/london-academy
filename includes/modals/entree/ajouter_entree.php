@@ -1,8 +1,8 @@
 <div id="ajouter_entree" class="modal custom-modal fade" role="dialog">
-	<div class="modal-dialog modal-dialog-centered" role="document">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Ajouter un(e) entree</h5>
+				<h5 class="modal-title">Ajouter une entrée de produit</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -56,10 +56,16 @@
 								<input type="text" class="form-control" id="montant_ent" name="montant_ent" autofocus>
 							</div>
 						</div>
-						<div class="col-sm-12">
+						<div class="col-sm-3">
 							<div class="form-group">
 								<label for="date_ent">Date d'entrée : </label>
 								<input type="date" class="form-control" id="date_ent" name="date_ent" autofocus>
+							</div>
+						</div>
+						<div class="col-sm-9">
+							<div class="form-group">
+								<label for="date_ent">Observation : </label>
+								<input type="text" class="form-control" id="observation_ent" name="observation_ent" autofocus>
 							</div>
 						</div>
 					</div>
