@@ -33,7 +33,7 @@
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="n_nom_technicien">Image : </label>
-								<input type="text" class="form-control" id="n_image_tech" name="n_image_tech" value="<?php echo htmlentities($row->image_tech); ?>" autofocus>
+								<input type="text" class="form-control" id="n_image_tech" name="n_image_tech" value="<?php echo htmlentities($row->image_tech); ?>" readonly>
 							</div>
 						</div>
 					</div>
