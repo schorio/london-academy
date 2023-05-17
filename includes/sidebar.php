@@ -21,35 +21,53 @@
 							</li>
 
 							<li> 
-								<a href="/epn/liste/fournisseur/fournisseur.php"><i class="la la-productor"></i> <span>Fournisseur</span></a>
+								<a href="/epn/liste/fournisseur/fournisseur.php"><i class="la la-industry"></i> <span>Fournisseur</span></a>
 							</li>
-							<li> 
-								<a href="/epn/liste/categorie/categorie.php"><i class="la la-productor"></i> <span>Categorie</span></a>
-							</li>
-							<li> 
-								<a href="/epn/liste/technicien/technicien.php"><i class="la la-productor"></i> <span>Technicien</span></a>
-							</li>
-							<li> 
-								<a href="/epn/liste/inventaire/inventaire.php"><i class="la la-productor"></i> <span>Inventaire</span></a>
-							</li>
-							<li> 
-								<a href="/epn/liste/entree/entree.php"><i class="la la-productor"></i> <span>Entrée</span></a>
-							</li>
-							<li> 
-								<a href="/epn/liste/sortie/sortie.php"><i class="la la-productor"></i> <span>Sortie</span></a>
-							</li>
-							<!-- <li class="submenu">
-								<a href="#" class="noti-dot"><i class="la la-user"></i> <span> Listes</span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li><a href="/epn/liste/employee/employees.php"> -- Employés</a></li>
-									<li><a href="/epn/listedepartement/departement.php"> -- Departements</a></li>
-									<li><a href="/epn/liste/etablissement/etablissement.php"> -- Etablissements</a></li>
-									<li><a href="/epn/liste/categorie/categorie.php"> -- Categorie</a></li>
-									<li><a href="/epn/liste/statut/statut.php"> -- Statut</a></li>
-									<li><a href="/epn/listegrade/grade.php"> -- Grade</a></li>
-								</ul>
-							</li> -->
 
+							<li class="menu-title"> 
+								<span></span>
+							</li>
+
+							<li> 
+								<a href="/epn/liste/categorie/categorie.php"><i class="la la-clipboard"></i> <span>Categorie</span></a>
+							</li>
+							
+							<li class="menu-title"> 
+								<span></span>
+							</li>
+
+							<li> 
+								<a href="/epn/liste/technicien/technicien.php"><i class="la la-user"></i> <span>Technicien</span></a>
+							</li>
+							
+							<li class="menu-title"> 
+								<span></span>
+							</li>
+
+							<li> 
+								<a href="/epn/liste/inventaire/inventaire.php"><i class="la la-barcode"></i> <span>Inventaire</span></a>
+							</li>
+							
+							<li class="menu-title"> 
+								<span></span>
+							</li>
+
+							<li> 
+								<a href="/epn/liste/entree/entree.php"><i class="la la-plus"></i> <span>Entrée</span></a>
+							</li>
+							
+							<li class="menu-title"> 
+								<span></span>
+							</li>
+
+							<li> 
+								<a href="/epn/liste/sortie/sortie.php"><i class="la la-share"></i> <span>Sortie</span></a>
+							</li>
+
+
+							<li class="menu-title"> 
+								<span></span>
+							</li>
 
 							<li class="menu-title"> 
 								<span>Autre</span>
