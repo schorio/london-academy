@@ -157,7 +157,7 @@
 		$lastInsert = $dbh->lastInsertId();
 		if($lastInsert>0){
 			echo "<script>alert('Le departement est ajouter avec succes');</script>";
-			echo "<script>window.location.href='/epn/liste/departement/departement.php';</script>";
+			echo "<script>window.location.href='/epn/listedepartement/departement.php';</script>";
 		}else{
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -226,7 +226,7 @@
 		$lastInsert = $dbh->lastInsertId();
 		if($lastInsert>0){
 			echo "<script>alert('La grade est ajouter avec succes');</script>";
-			echo "<script>window.location.href='/epn/liste/grade/grade.php';</script>";
+			echo "<script>window.location.href='/epn/listegrade/grade.php';</script>";
 		}else{
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -280,7 +280,7 @@
 		$delete_id = $_POST['delete_id'];
 		$sql = "DELETE FROM grade WHERE id_grade='$delete_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/grade/grade.php"</script>';
+			echo '<script>window.location.href="/epn/listegrade/grade.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -300,7 +300,7 @@
 		$delete_id = $_POST['delete_id'];
 		$sql = "DELETE FROM departement WHERE id_departement='$delete_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/departement/departement.php"</script>';
+			echo '<script>window.location.href="/epn/listedepartement/departement.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -353,7 +353,7 @@
 			id_chef_departement='$n_id_chef_departement'
 			WHERE id_departement='$edit_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/departement/departement.php"</script>';
+			echo '<script>window.location.href="/epn/listedepartement/departement.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -385,7 +385,7 @@
 			code_grade='$n_code_grade'
 			WHERE id_grade='$edit_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/grade/grade.php"</script>';
+			echo '<script>window.location.href="/epn/listegrade/grade.php"</script>';
 		} else {
 			echo "Error";
 		}

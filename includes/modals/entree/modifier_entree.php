@@ -4,7 +4,7 @@
 		<div class="modal-content">
 			<form method="POST" enctype="multipart/form-data">
 				<div class="modal-header">
-					<h5 class="modal-title">Modifier un entree</h5>
+					<h5 class="modal-title">Modification de <?php echo htmlentities($row->reference_ent); ?></h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>

@@ -18,7 +18,7 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title> Listes des entrees</title>
+        <title> Les produits entrés</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/EPN.png">
@@ -72,14 +72,14 @@
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
-								<h3 class="page-title">Entrée des produits</h3>
+								<h3 class="page-title">Les produits entrés</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Listes</a></li>
-									<li class="breadcrumb-item active">Listes des entrées des produits</li>
+									<li class="breadcrumb-item active">Listes des produits entrés</li>
 								</ul>
 							</div>
 							<div class="col-auto float-right ml-auto">
-								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_entree"><i class="fa fa-plus"></i> Ajouter un entrée de produit</a>
+								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_entree"><i class="fa fa-plus"></i> Entrer un produit</a>
 								<div class="view-icons">
 									<a href="entree.php" title="Grid View" class="grid-view btn btn-link active"><i class="fa fa-th"></i></a>
 									<a href="entree-list.php" title="Tabular View" class="list-view btn btn-link"><i class="fa fa-bars"></i></a>

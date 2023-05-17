@@ -42,11 +42,11 @@
 								<a href="#" class="noti-dot"><i class="la la-user"></i> <span> Listes</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="/epn/liste/employee/employees.php"> -- Employés</a></li>
-									<li><a href="/epn/liste/departement/departement.php"> -- Departements</a></li>
+									<li><a href="/epn/listedepartement/departement.php"> -- Departements</a></li>
 									<li><a href="/epn/liste/etablissement/etablissement.php"> -- Etablissements</a></li>
 									<li><a href="/epn/liste/categorie/categorie.php"> -- Categorie</a></li>
 									<li><a href="/epn/liste/statut/statut.php"> -- Statut</a></li>
-									<li><a href="/epn/liste/grade/grade.php"> -- Grade</a></li>
+									<li><a href="/epn/listegrade/grade.php"> -- Grade</a></li>
 								</ul>
 							</li> -->
 

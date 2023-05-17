@@ -6,8 +6,8 @@
 				<div class="modal-body-delete">
 					<div class="form-header">
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h3>Supprimer un entrée de produit</h3>
-							<p>Voulez vous vraiment supprimer l'entree de <strong><?php echo htmlentities($row->piece_ent); ?></strong> ?</p>
+							<h3>Suppression</h3>
+							<p>Voulez vous vraiment supprimer <strong><?php echo htmlentities($row->reference_ent); ?></strong> ?</p>
 					</div>
 					<div class="modal-btn delete-action">
 						<input type="hidden" name="supprimer_id" value="<?php echo htmlentities($row->id_ent); ?>">

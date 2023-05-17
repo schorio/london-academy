@@ -6,7 +6,7 @@
 				<div class="modal-body-delete">
 					<div class="form-header">
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h3>Supprimer un(e) inventaire</h3>
+							<h3>Suppression</h3>
 							<p>Voulez vous vraiment supprimer l'inventaire <strong><?php echo htmlentities($row->piece_inv); ?></strong> ?</p>
 					</div>
 					<div class="modal-btn delete-action">

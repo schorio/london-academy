@@ -6,7 +6,7 @@
 				<div class="modal-body-delete">
 					<div class="form-header">
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h3>Supprimer une sortie</h3>
+							<h3>Suppression</h3>
 							<p>Voulez vous vraiment supprimer la sortie de <strong><?php echo htmlentities($row->piece_sort); ?></strong> ?</p>
 					</div>
 					<div class="modal-btn delete-action">
