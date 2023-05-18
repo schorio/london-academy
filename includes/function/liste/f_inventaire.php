@@ -44,6 +44,7 @@
 		// sql to delete a record
 		$supprimer_id = $_POST['supprimer_id'];
 		$categorie_inv = $_POST['categorie_inv'];
+		$si_inv = $_POST['si_inv'];
 		$sql = "DELETE FROM inventaire WHERE id_inv='$supprimer_id' ";
 		
 		if ($conn->query($sql) === TRUE) {
@@ -64,6 +65,7 @@
 
     if(isset($_POST['modifier_inv'])){
 		$modifier_id = htmlspecialchars($_POST['modifier_id']);
+		$si_inv = $_POST['si_inv'];
 		$n_piece_inv = htmlspecialchars($_POST['n_piece_inv']);
         $n_fournisseur_inv = htmlspecialchars($_POST['n_fournisseur_inv']);
 		$categorie_inv = htmlspecialchars($_POST['categorie_inv']);

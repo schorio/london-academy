@@ -76,6 +76,7 @@
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="si_inv">Stock initial</label>
+								<input type="hidden" class="form-control" id="si_inv" name="si_inv" value="<?php echo htmlentities($row->si_inv); ?>">
 								<input type="text" class="form-control" id="n_si_inv" name="n_si_inv" value="<?php echo htmlentities($row->si_inv); ?>" readonly>
 							</div>
 						</div>
