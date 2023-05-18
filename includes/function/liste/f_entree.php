@@ -23,11 +23,35 @@
         $query->execute();
         $lastInsert = $dbh->lastInsertId();
         if($lastInsert>0){
-            echo "<script>window.location.href='/london-academy/liste/entree/entree.php';</script>";
+            $sql_1 = "UPDATE inventaire SET 
+				entree_inv=entree_inv+'$quantite_ent' WHERE id_inv='$piece_ent' ";
+            $sql_2 = "UPDATE inventaire SET 
+                sa_inv=sa_inv+'$quantite_ent' WHERE id_inv='$piece_ent' ";
+            $sql_3 = "UPDATE fournisseur SET 
+                nbEntree_frn=nbEntree_frn+'$quantite_ent' 
+                WHERE id_frn=(SELECT fournisseur_inv from inventaire WHERE id_inv='$piece_ent')";
+            $sql_4 = "UPDATE fournisseur SET 
+                ca_frn=ca_frn+'$montant_ent' 
+                WHERE id_frn=(SELECT fournisseur_inv from inventaire WHERE id_inv='$piece_ent')";
+
+            if ($conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE and $conn->query($sql_4) === TRUE) {
+                echo "<script>window.location.href='/london-academy/liste/entree/entree.php';</script>";
+            } else {
+                echo "<script>alert('Une erreur s'est survenue');</script>";
+            }
+            
         }else{
             echo "<script>alert('Une erreur s'est survenue');</script>";
         }
     }
+
+
+
+
+
+
+
+
 
 
     if(isset($_POST['supprimer_ent'])){
@@ -40,6 +64,14 @@
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
 	}
+
+
+
+
+
+
+
+
 
 
     if(isset($_POST['modifier_ent'])){
