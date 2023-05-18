@@ -45,6 +45,7 @@
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="n_categorie_inv">categorie : </label>
+								<input type="hidden" class="form-control" id="categorie_inv" name="categorie_inv" value="<?php echo htmlentities($row->categorie_inv); ?>">
 								<select required name="n_categorie_inv" class="select action">
 									<option value="<?php echo htmlentities($row->categorie_inv); ?>">
 										<?php echo htmlentities($row->categorie_inv); ?>
