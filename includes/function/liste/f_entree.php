@@ -57,8 +57,9 @@
     if(isset($_POST['supprimer_ent'])){
 		// sql to delete a record
 		$supprimer_id = htmlspecialchars($_POST['supprimer_id']);
-        $quantite_ent = htmlspecialchars($_POST['$quantite_ent']);
+        $quantite_ent = htmlspecialchars($_POST['quantite_ent']);
         $piece_ent = htmlspecialchars($_POST['piece_ent']);
+        $montant_ent = htmlspecialchars($_POST['montant_ent']);
 		$sql = "DELETE FROM entree WHERE id_ent='$supprimer_id' ";
 		if ($conn->query($sql) === TRUE) {
 			$sql_1 = "UPDATE inventaire SET 
