@@ -11,6 +11,8 @@
 					</div>
 					<div class="modal-btn delete-action">
 						<input type="hidden" name="supprimer_id" value="<?php echo htmlentities($row->id_ent); ?>">
+						<input type="hidden" name="piece_ent" value="<?php echo htmlentities($row->piece_ent); ?>">
+						<input type="hidden" name="quantite_ent" value="<?php echo htmlentities($row->quantite_ent); ?>">
 						<div class="row">
 							<div class="col-6">
 								<a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Annuler</a>

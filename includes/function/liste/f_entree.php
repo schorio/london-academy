@@ -56,10 +56,28 @@
 
     if(isset($_POST['supprimer_ent'])){
 		// sql to delete a record
-		$supprimer_id = $_POST['supprimer_id'];
+		$supprimer_id = htmlspecialchars($_POST['supprimer_id']);
+        $quantite_ent = htmlspecialchars($_POST['$quantite_ent']);
+        $piece_ent = htmlspecialchars($_POST['piece_ent']);
 		$sql = "DELETE FROM entree WHERE id_ent='$supprimer_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/london-academy/liste/entree/entree.php"</script>';
+			$sql_1 = "UPDATE inventaire SET 
+				entree_inv=entree_inv - '$quantite_ent' WHERE id_inv='$piece_ent' ";
+            $sql_2 = "UPDATE inventaire SET 
+                sa_inv=sa_inv - '$quantite_ent' WHERE id_inv='$piece_ent' ";
+            $sql_3 = "UPDATE fournisseur SET 
+                nbEntree_frn=nbEntree_frn - '$quantite_ent' 
+                WHERE id_frn=(SELECT fournisseur_inv from inventaire WHERE id_inv='$piece_ent')";
+            $sql_4 = "UPDATE fournisseur SET 
+                ca_frn=ca_frn - '$montant_ent' 
+                WHERE id_frn=(SELECT fournisseur_inv from inventaire WHERE id_inv='$piece_ent')";
+
+            if ($conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE and $conn->query($sql_4) === TRUE) {
+                echo "<script>window.location.href='/london-academy/liste/entree/entree.php';</script>";
+            } else {
+                echo "<script>alert('Une erreur s'est survenue');</script>";
+            }
+
 		} else {
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
