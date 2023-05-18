@@ -43,9 +43,19 @@
     if(isset($_POST['supprimer_inv'])){
 		// sql to delete a record
 		$supprimer_id = $_POST['supprimer_id'];
+		$categorie_inv = $_POST['categorie_inv'];
 		$sql = "DELETE FROM inventaire WHERE id_inv='$supprimer_id' ";
+		
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/london-academy/liste/inventaire/inventaire.php"</script>';
+			$sql_1 = "UPDATE categorie SET 
+				quantite_cat=quantite_cat-1 WHERE id_cat='$categorie_inv' ";
+
+			if ($conn->query($sql_1) === TRUE) {
+				echo '<script>window.location.href="/london-academy/liste/inventaire/inventaire.php"</script>';
+			} else {
+				echo "<script>alert('Une erreur s'est survenue');</script>";
+			}
+
 		} else {
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
