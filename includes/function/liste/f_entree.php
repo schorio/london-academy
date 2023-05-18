@@ -51,9 +51,6 @@
 
 
 
-
-
-
     if(isset($_POST['supprimer_ent'])){
 		// sql to delete a record
 		$supprimer_id = htmlspecialchars($_POST['supprimer_id']);
@@ -90,15 +87,15 @@
 
 
 
-
-
-
     if(isset($_POST['modifier_ent'])){
 		$modifier_id = htmlspecialchars($_POST['modifier_id']);
+        $piece_ent = htmlspecialchars($_POST['piece_ent']);
 		$n_piece_ent = htmlspecialchars($_POST['n_piece_ent']);
         $n_reference_ent = htmlspecialchars($_POST['n_reference_ent']);
+        $quantite_ent = htmlspecialchars($_POST['quantite_ent']);
         $n_quantite_ent = htmlspecialchars($_POST['n_quantite_ent']);
         $n_pu_ent = htmlspecialchars($_POST['n_pu_ent']);
+        $montant_ent = htmlspecialchars($_POST['montant_ent']);
         $n_montant_ent = htmlspecialchars($_POST['n_montant_ent']);
         $n_date_ent = htmlspecialchars($_POST['n_date_ent']);
         $n_observation_ent = htmlspecialchars($_POST['n_observation_ent']);
@@ -114,7 +111,41 @@
 			WHERE id_ent='$modifier_id' ";
 
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/london-academy/liste/entree/entree.php"</script>';
+            if ($piece_ent != $n_piece_ent or $quantite_ent != $n_quantite_ent or $montant_ent != $n_montant_ent) {
+                $n_sql_1 = "UPDATE inventaire SET 
+                    entree_inv=entree_inv-'$quantite_ent' WHERE id_inv='$piece_ent' ";
+                $sql_1 = "UPDATE inventaire SET 
+                    entree_inv=entree_inv+'$n_quantite_ent' WHERE id_inv='$n_piece_ent' ";
+
+                $n_sql_2 = "UPDATE inventaire SET 
+                    sa_inv=sa_inv-'$quantite_ent' WHERE id_inv='$piece_ent' ";
+                $sql_2 = "UPDATE inventaire SET 
+                    sa_inv=sa_inv+'$n_quantite_ent' WHERE id_inv='$n_piece_ent' ";
+
+                $n_sql_3 = "UPDATE fournisseur SET 
+                    nbEntree_frn=nbEntree_frn-'$quantite_ent' 
+                    WHERE id_frn=(SELECT fournisseur_inv from inventaire WHERE id_inv='$piece_ent')";
+                $sql_3 = "UPDATE fournisseur SET 
+                    nbEntree_frn=nbEntree_frn+'$n_quantite_ent' 
+                    WHERE id_frn=(SELECT fournisseur_inv from inventaire WHERE id_inv='$n_piece_ent')";
+
+                $n_sql_4 = "UPDATE fournisseur SET 
+                    ca_frn=ca_frn-'$montant_ent' 
+                    WHERE id_frn=(SELECT fournisseur_inv from inventaire WHERE id_inv='$piece_ent')";
+                $sql_4 = "UPDATE fournisseur SET 
+                    ca_frn=ca_frn+'$n_montant_ent' 
+                    WHERE id_frn=(SELECT fournisseur_inv from inventaire WHERE id_inv='$n_piece_ent')";
+
+                if ($conn->query($n_sql_1) === TRUE and $conn->query($n_sql_2) === TRUE and $conn->query($n_sql_3) === TRUE and $conn->query($n_sql_4) === TRUE 
+                    and $conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE and $conn->query($sql_4) === TRUE) {
+                    echo "<script>window.location.href='/london-academy/liste/entree/entree.php';</script>";
+                } else {
+                    echo "<script>alert('Une erreur s'est survenue');</script>";
+                }
+            } else {
+                echo "<script>window.location.href='/london-academy/liste/entree/entree.php';</script>";
+            }
+
 		} else {
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}

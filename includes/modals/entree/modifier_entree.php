@@ -14,7 +14,8 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="form-group">
-								<label for="piece_ent">Produit : </label>
+								<label for="n_piece_ent">Produit : </label>
+								<input type="hidden" name="piece_ent" value="<?php echo htmlentities($row->piece_ent); ?>">
 								<select name="n_piece_ent" class="select action">
 									<option value="<?php echo htmlentities($row->piece_ent); ?>"><?php echo htmlentities($row->piece_ent); ?></option>
 									<?php 
@@ -42,6 +43,7 @@
 						<div class="col-sm-3">
 							<div class="form-group">
 								<label for="quantite_ent">Quantite :</label>
+								<input type="hidden" name="quantite_ent" value="<?php echo htmlentities($row->quantite_ent); ?>">
 								<input type="number" class="form-control" id="quantite_ent" name="n_quantite_ent" value="<?php echo htmlentities($row->quantite_ent); ?>" autofocus>
 							</div>
 						</div>
@@ -54,6 +56,7 @@
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="montant_ent">Montant : </label>
+								<input type="hidden" name="montant_ent" value="<?php echo htmlentities($row->montant_ent); ?>">
 								<input type="text" class="form-control" id="montant_ent" name="n_montant_ent" value="<?php echo htmlentities($row->montant_ent); ?>" autofocus>
 							</div>
 						</div>
