@@ -22,8 +22,18 @@
         $query->bindParam(':stockage_inv',$stockage_inv,pdo::PARAM_STR);
 		$query->execute();
 		$lastInsert = $dbh->lastInsertId();
+
 		if($lastInsert>0){
-			echo "<script>window.location.href='/london-academy/liste/inventaire/inventaire.php';</script>";
+
+			$sql_1 = "UPDATE categorie SET 
+				quantite_cat=quantite_cat+1 WHERE id_cat='$categorie_inv' ";
+
+			if ($conn->query($sql_1) === TRUE) {
+				echo '<script>window.location.href="/london-academy/liste/inventaire/inventaire.php"</script>';
+			} else {
+				echo "<script>alert('Une erreur s'est survenue');</script>";
+			}
+
 		}else{
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
