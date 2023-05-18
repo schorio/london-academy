@@ -26,7 +26,7 @@
 		if($lastInsert>0){
 
 			$sql_1 = "UPDATE categorie SET 
-				quantite_cat=quantite_cat+1 WHERE id_cat='$categorie_inv' ";
+				quantite_cat=quantite_cat+'$si_inv' WHERE id_cat='$categorie_inv' ";
 
 			if ($conn->query($sql_1) === TRUE) {
 				echo '<script>window.location.href="/london-academy/liste/inventaire/inventaire.php"</script>';
@@ -48,7 +48,7 @@
 		
 		if ($conn->query($sql) === TRUE) {
 			$sql_1 = "UPDATE categorie SET 
-				quantite_cat=quantite_cat-1 WHERE id_cat='$categorie_inv' ";
+				quantite_cat=quantite_cat-'$si_inv' WHERE id_cat='$categorie_inv' ";
 
 			if ($conn->query($sql_1) === TRUE) {
 				echo '<script>window.location.href="/london-academy/liste/inventaire/inventaire.php"</script>';
@@ -84,9 +84,9 @@
 		if ($conn->query($sql) === TRUE) {
 			if ($categorie_inv != $n_categorie_inv) {
 				$sql_1 = "UPDATE categorie SET 
-				quantite_cat=quantite_cat-1 WHERE id_cat='$categorie_inv' ";
+				quantite_cat=quantite_cat-'$si_inv' WHERE id_cat='$categorie_inv' ";
 				$sql_2 = "UPDATE categorie SET 
-				quantite_cat=quantite_cat+1 WHERE id_cat='$n_categorie_inv' ";
+				quantite_cat=quantite_cat+'$si_inv' WHERE id_cat='$n_categorie_inv' ";
 
 				if ($conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE) {
 					echo '<script>window.location.href="/london-academy/liste/inventaire/inventaire.php"</script>';
