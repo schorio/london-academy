@@ -18,7 +18,7 @@
         <title>EPN Accueil</title>
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/EPN.png">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo.png">
 		
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -144,7 +144,7 @@
 							<div class="container_3 shadow mb-1">
 								<a id="toggle_btn" href="javascript:void(0);">
 								<div class="content">
-									<img src="assets/img/EPN.png">
+									<img src="assets/img/logo.png">
 								</div>
 								</a>
 							</div>

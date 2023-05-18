@@ -17,7 +17,7 @@
         <title>Les produits entrées</title>
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/EPN.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/logo.png">
 		
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">

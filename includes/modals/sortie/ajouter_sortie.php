@@ -67,7 +67,7 @@
 						</div>
 						<div class="col-sm-9">
 							<div class="form-group">
-								<label for="date_sort">Observation : </label>
+								<label for="observation_sort">Observation : </label>
 								<input type="text" class="form-control" id="observation_sort" name="observation_sort" autofocus>
 							</div>
 						</div>
