@@ -3,7 +3,7 @@
 $config = [
     "URL" => "http://localhost/london-academy/",
     "DB_HOST" => "localhost",
-    "DB_NAME" => "e-stock",
+    "DB_NAME" => "london-academy",
     "DB_USER" => "root",
     "DB_PASSWORD" => "",
     "ROLES" => ["admin","visiteur"],
