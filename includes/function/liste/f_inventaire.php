@@ -6,7 +6,7 @@
         $categorie_inv = htmlspecialchars($_POST['categorie_inv']);
         $description_inv = htmlspecialchars($_POST['description_inv']);
         $si_inv = htmlspecialchars($_POST['si_inv']);
-        $sa_inv = htmlspecialchars($_POST['sa_inv']);
+        $sa_inv = htmlspecialchars($_POST['si_inv']);
         $stockage_inv = htmlspecialchars($_POST['stockage_inv']);
 
 		$sql = "INSERT INTO `inventaire` (`piece_inv`, `fournisseur_inv`, `categorie_inv`, `description_inv`, `si_inv`, `sa_inv`, `stockage_inv`) 
