@@ -71,8 +71,11 @@
 
     if(isset($_POST['modifier_sort'])){
 		$modifier_id = htmlspecialchars($_POST['modifier_id']);
+        $piece_sort = htmlspecialchars($_POST['piece_sort']);
 		$n_piece_sort = htmlspecialchars($_POST['n_piece_sort']);
+        $technicien_sort = htmlspecialchars($_POST['technicien_sort']);
         $n_technicien_sort = htmlspecialchars($_POST['n_technicien_sort']);
+        $quantite_sort = htmlspecialchars($_POST['quantite_sort']);
         $n_quantite_sort = htmlspecialchars($_POST['n_quantite_sort']);
         $n_date_sort = htmlspecialchars($_POST['n_date_sort']);
         $n_observation_sort = htmlspecialchars($_POST['n_observation_sort']);
@@ -86,7 +89,35 @@
 			WHERE id_sort='$modifier_id' ";
 
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/london-academy/liste/sortie/sortie.php"</script>';
+            if ($piece_sort != $n_piece_sort or $quantite_sort != $n_quantite_sort or $technicien_sort != $n_technicien_sort) {
+                $n_sql_1 = "UPDATE inventaire SET 
+				    sortie_inv=sortie_inv-'$quantite_sort' WHERE id_inv='$piece_sort' ";
+                $sql_1 = "UPDATE inventaire SET 
+				    sortie_inv=sortie_inv+'$n_quantite_sort' WHERE id_inv='$n_piece_sort' ";
+
+                $n_sql_2 = "UPDATE inventaire SET 
+                    sa_inv=sa_inv+'$quantite_sort' WHERE id_inv='$piece_sort' ";
+                $sql_2 = "UPDATE inventaire SET 
+                    sa_inv=sa_inv-'$n_quantite_sort' WHERE id_inv='$n_piece_sort' ";
+
+                $n_sql_3 = "UPDATE technicien SET 
+                    nbSortie_tech=nbSortie_tech-'$quantite_sort' 
+                    WHERE id_tech='$technicien_sort'";
+                $sql_3 = "UPDATE technicien SET 
+                    nbSortie_tech=nbSortie_tech+'$n_quantite_sort' 
+                    WHERE id_tech='$n_technicien_sort'";
+
+
+                if ($conn->query($n_sql_1) === TRUE and $conn->query($n_sql_2) === TRUE and $conn->query($n_sql_3) === TRUE 
+                    and $conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE) {
+                        echo '<script>window.location.href="/london-academy/liste/sortie/sortie.php"</script>';
+                } else {
+                    echo "<script>alert('Une erreur s'est survenue');</script>";
+                }
+            } else {
+                echo '<script>window.location.href="/london-academy/liste/sortie/sortie.php"</script>';
+            }
+
 		} else {
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}

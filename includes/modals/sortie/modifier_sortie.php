@@ -15,6 +15,7 @@
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="piece_sort">Produit : </label>
+								<input type="hidden" name="piece_sort" value="<?php echo htmlentities($row->piece_sort); ?>">
 								<select name="n_piece_sort" class="select action">
 									<option value="<?php echo htmlentities($row->piece_sort); ?>"><?php echo htmlentities($row->piece_sort); ?></option>
 									<?php 
@@ -37,6 +38,7 @@
 						<div class="col-sm-9">
 							<div class="form-group">
 								<label for="technicien_sort">Technicien : </label>
+								<input type="hidden" name="technicien_sort" value="<?php echo htmlentities($row->technicien_sort); ?>">
 								<select name="n_technicien_sort" class="select action">
 									<option value="<?php echo htmlentities($row->technicien_sort); ?>"><?php echo htmlentities($row->technicien_sort); ?></option>
 									<?php 
@@ -59,6 +61,7 @@
 						<div class="col-sm-3">
 							<div class="form-group">
 								<label for="quantite_sort">Quantite :</label>
+								<input type="hidden" name="quantite_sort" value="<?php echo htmlentities($row->quantite_sort); ?>">
 								<input type="number" class="form-control" id="quantite_sort" name="n_quantite_sort" value="<?php echo htmlentities($row->quantite_sort); ?>" autofocus>
 							</div>
 						</div>
