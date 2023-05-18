@@ -8,7 +8,7 @@
 		$query->execute();
 		$lastInsert = $dbh->lastInsertId();
 		if($lastInsert>0){
-			echo "<script>window.location.href='/epn/liste/fournisseur/fournisseur.php';</script>";
+			echo "<script>window.location.href='/london-academy/liste/fournisseur/fournisseur.php';</script>";
 		}else{
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -20,7 +20,7 @@
 		$supprimer_id = $_POST['supprimer_id'];
 		$sql = "DELETE FROM fournisseur WHERE id_frn='$supprimer_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/fournisseur/fournisseur.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/fournisseur/fournisseur.php"</script>';
 		} else {
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -36,7 +36,7 @@
 			observation_frn='$n_observation_frn'
 			WHERE id_frn='$modifier_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/fournisseur/fournisseur.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/fournisseur/fournisseur.php"</script>';
 		} else {
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}

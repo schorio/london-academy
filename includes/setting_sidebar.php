@@ -12,7 +12,7 @@
 		<div class="sidebar-menu">
 			<ul>
 				<li> 
-					<a href="/epn/index.php"><i class="la la-home"></i> <span>Retour a l'accueil</span></a>
+					<a href="/london-academy/index.php"><i class="la la-home"></i> <span>Retour a l'accueil</span></a>
 				</li>
 				
 				<li class="menu-title"> </li>
@@ -37,7 +37,7 @@
 				<li class="menu-title"> </li>
 
 				<li> 
-					<a href="/epn/includes/function/connection/logout.php"><i class="la la-power-off"></i> <span>Déconnection</span></a>
+					<a href="/london-academy/includes/function/connection/logout.php"><i class="la la-power-off"></i> <span>Déconnection</span></a>
 				</li>
 			</ul>
 		</div>

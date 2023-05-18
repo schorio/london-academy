@@ -78,7 +78,7 @@
 		$query->execute();
 		$lastInsert = $dbh->lastInsertId();
 		if($lastInsert>0){
-			echo "<script>window.location.href='/epn/liste/employee/employees.php';</script>";
+			echo "<script>window.location.href='/london-academy/liste/employee/employees.php';</script>";
 			echo "<script>alert('Employee est ajouter avec succes.');</script>";
 		}else{
 			echo "<script>alert('Une s'est produite');</script>";
@@ -115,7 +115,7 @@
 
 		if ($confirmPassword !== $password_ut){
 			echo "<script>alert('Confirmer votre mot de passe');</script>";
-			echo "<script>window.location.href='/epn/liste/utilisateur/ut.php';</script>";
+			echo "<script>window.location.href='/london-academy/liste/utilisateur/ut.php';</script>";
 		}
 		else{
 
@@ -134,7 +134,7 @@
 			$lastInsert = $dbh->lastInsertId();
 			if($lastInsert>0){
 				echo "<script>alert('L'utilisateur est ajouter avec succes');</script>";
-				echo "<script>window.location.href='/epn/liste/utilisateur/ut.php';</script>";
+				echo "<script>window.location.href='/london-academy/liste/utilisateur/ut.php';</script>";
 			}else{
 				echo "<script>alert('Une erreur s'est survenue');</script>";
 			}
@@ -157,7 +157,7 @@
 		$lastInsert = $dbh->lastInsertId();
 		if($lastInsert>0){
 			echo "<script>alert('Le departement est ajouter avec succes');</script>";
-			echo "<script>window.location.href='/epn/listedepartement/departement.php';</script>";
+			echo "<script>window.location.href='/london-academy/listedepartement/departement.php';</script>";
 		}else{
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -191,7 +191,7 @@
 		$lastInsert = $dbh->lastInsertId();
 		if($lastInsert>0 || $conn->query($sql_1) === TRUE){
 			echo "<script>alert('Le etablissement est ajouter avec succes');</script>";
-			echo "<script>window.location.href='/epn/liste/etablissement/etablissement.php';</script>";
+			echo "<script>window.location.href='/london-academy/liste/etablissement/etablissement.php';</script>";
 		}else{
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -208,7 +208,7 @@
 		$lastInsert = $dbh->lastInsertId();
 		if($lastInsert>0){
 			echo "<script>alert('La categorie est ajouter avec succes');</script>";
-			echo "<script>window.location.href='/epn/liste/categorie/categorie.php';</script>";
+			echo "<script>window.location.href='/london-academy/liste/categorie/categorie.php';</script>";
 		}else{
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -226,7 +226,7 @@
 		$lastInsert = $dbh->lastInsertId();
 		if($lastInsert>0){
 			echo "<script>alert('La grade est ajouter avec succes');</script>";
-			echo "<script>window.location.href='/epn/listegrade/grade.php';</script>";
+			echo "<script>window.location.href='/london-academy/listegrade/grade.php';</script>";
 		}else{
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -246,7 +246,7 @@
 		$lastInsert = $dbh->lastInsertId();
 		if($lastInsert>0){
 			echo "<script>alert('Le statut est ajouter avec succes');</script>";
-			echo "<script>window.location.href='/epn/liste/statut/statut.php';</script>";
+			echo "<script>window.location.href='/london-academy/liste/statut/statut.php';</script>";
 		}else{
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -260,7 +260,7 @@
 		$delete_id = $_POST['delete_id'];
 		$sql = "DELETE FROM statut WHERE id_statut='$delete_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/statut/statut.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/statut/statut.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -270,7 +270,7 @@
 		$delete_id = $_POST['delete_id'];
 		$sql = "DELETE FROM employee WHERE id_employee='$delete_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/employee/employees.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/employee/employees.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -280,7 +280,7 @@
 		$delete_id = $_POST['delete_id'];
 		$sql = "DELETE FROM grade WHERE id_grade='$delete_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/listegrade/grade.php"</script>';
+			echo '<script>window.location.href="/london-academy/listegrade/grade.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -290,7 +290,7 @@
 		$delete_id = $_POST['delete_id'];
 		$sql = "DELETE FROM categorie WHERE id_categorie='$delete_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/categorie/categorie.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/categorie/categorie.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -300,7 +300,7 @@
 		$delete_id = $_POST['delete_id'];
 		$sql = "DELETE FROM departement WHERE id_departement='$delete_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/listedepartement/departement.php"</script>';
+			echo '<script>window.location.href="/london-academy/listedepartement/departement.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -310,7 +310,7 @@
 		$delete_id = $_POST['delete_id'];
 		$sql = "DELETE FROM etablissement WHERE id_etablissement='$delete_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/etablissement/etablissement.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/etablissement/etablissement.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -320,7 +320,7 @@
 		$delete_id = $_POST['delete_id'];
 		$sql = "DELETE FROM utilisateur WHERE id_ut='$delete_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/utilisateur/ut.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/utilisateur/ut.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -337,7 +337,7 @@
 			nom_statut='$n_nom_statut'
 			WHERE id_statut='$edit_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/statut/statut.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/statut/statut.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -353,7 +353,7 @@
 			id_chef_departement='$n_id_chef_departement'
 			WHERE id_departement='$edit_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/listedepartement/departement.php"</script>';
+			echo '<script>window.location.href="/london-academy/listedepartement/departement.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -373,7 +373,7 @@
 			id_departement='$n_et_id_departement'
 			WHERE id_etablissement='$edit_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/etablissement/etablissement.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/etablissement/etablissement.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -385,7 +385,7 @@
 			code_grade='$n_code_grade'
 			WHERE id_grade='$edit_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/listegrade/grade.php"</script>';
+			echo '<script>window.location.href="/london-academy/listegrade/grade.php"</script>';
 		} else {
 			echo "Error";
 		}
@@ -434,7 +434,7 @@
 
 		if ($confirmPassword !== $password_ut){
 			echo "<script>alert('Confirmer votre mot de passe');</script>";
-			echo "<script>window.location.href='/epn/liste/utilisateur/ut.php';</script>";
+			echo "<script>window.location.href='/london-academy/liste/utilisateur/ut.php';</script>";
 		}
 		else{
 
@@ -449,7 +449,7 @@
 						image_ut='$pic'
 					WHERE id_ut='$edit_id' ";
 			if ($conn->query($sql) === TRUE) {
-				echo '<script>window.location.href="/epn/liste/utilisateur/ut.php"</script>';
+				echo '<script>window.location.href="/london-academy/liste/utilisateur/ut.php"</script>';
 			} else {
 				echo "Error";
 			}
@@ -536,7 +536,7 @@
 			WHERE id_employee = '$id_employee' ";
 
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/profile.php?id='.$id_employee.'"</script>';
+			echo '<script>window.location.href="/london-academy/profile.php?id='.$id_employee.'"</script>';
 		} else {
 			echo "Error";
 		}
@@ -553,15 +553,15 @@
 		if ($a_mdp !== $password_ut && $n__mdp !== $n_mdp){
 			echo "<script>alert('Ancien mot de passe invalide');</script>";
 			echo "<script>alert('Confirmer votre nouveau mot de passe');</script>";
-			echo "<script>window.location.href='/epn/includes/function/utilisateur/changer_mdp.php';</script>";
+			echo "<script>window.location.href='/london-academy/includes/function/utilisateur/changer_mdp.php';</script>";
 		}
 		elseif ($a_mdp !== $password_ut){
 			echo "<script>alert('Ancien mot de passe invalide');</script>";
-			echo "<script>window.location.href='/epn/includes/function/utilisateur/changer_mdp.php';</script>";
+			echo "<script>window.location.href='/london-academy/includes/function/utilisateur/changer_mdp.php';</script>";
 		}
 		elseif ($n__mdp !== $n_mdp){
 			echo "<script>alert('Confirmer votre nouveau mot de pass');</script>";
-			echo "<script>window.location.href='/epn/includes/function/utilisateur/changer_mdp.php';</script>";
+			echo "<script>window.location.href='/london-academy/includes/function/utilisateur/changer_mdp.php';</script>";
 
 		}
 		else{
@@ -570,7 +570,7 @@
 			WHERE id_ut='$edit_id' ";
 			if ($conn->query($sql) === TRUE) {
 				echo "<script>alert('Votre mot de passe est modifier avec succes');</script>";
-				echo '<script>window.location.href="/epn/includes/function/utilisateur/changer_mdp.php";</script>';
+				echo '<script>window.location.href="/london-academy/includes/function/utilisateur/changer_mdp.php";</script>';
 			} else {
 				echo "Error";
 			}

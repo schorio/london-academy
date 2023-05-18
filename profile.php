@@ -71,7 +71,7 @@
 							<div class="col-sm-12">
 								<h3 class="page-title">Profile</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="/epn/liste/employee/employees.php">Listes des employés</a></li>
+									<li class="breadcrumb-item"><a href="/london-academy/liste/employee/employees.php">Listes des employés</a></li>
 									<li class="breadcrumb-item active">Profile</li>
 								</ul>
 							</div>
@@ -168,7 +168,7 @@
 									<div class="profile-view">
 										<div class="profile-img-wrap">
 											<div class="profile-img">
-												<a href="#"><img alt="" src="/epn/assets/img/employee/<?php echo $image ?>"></a>
+												<a href="#"><img alt="" src="/london-academy/assets/img/employee/<?php echo $image ?>"></a>
 											</div>
 										</div>
 										<div class="profile-basic">

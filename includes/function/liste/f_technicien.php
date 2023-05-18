@@ -25,7 +25,7 @@
         $query->execute();
         $lastInsert = $dbh->lastInsertId();
         if($lastInsert>0){
-            echo "<script>window.location.href='/epn/liste/technicien/technicien.php';</script>";
+            echo "<script>window.location.href='/london-academy/liste/technicien/technicien.php';</script>";
         }else{
             echo "<script>alert('ERREUR');</script>";
         }
@@ -37,7 +37,7 @@
 		$supprimer_id = $_POST['supprimer_id'];
 		$sql = "DELETE FROM technicien WHERE id_tech='$supprimer_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/technicien/technicien.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/technicien/technicien.php"</script>';
 		} else {
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -53,7 +53,7 @@
 			observation_tech='$n_observation_tech'
 			WHERE id_tech='$modifier_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/technicien/technicien.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/technicien/technicien.php"</script>';
 		} else {
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}

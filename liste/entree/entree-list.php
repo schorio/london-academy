@@ -134,7 +134,7 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="/epn/profile.php?id=<?php echo htmlentities($row->id_ent); ?> "> <?php echo htmlentities($row->piece_ent); ?><span><?php echo htmlentities($row->reference_ent); ?></span></a>
+													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_ent); ?> "> <?php echo htmlentities($row->piece_ent); ?><span><?php echo htmlentities($row->reference_ent); ?></span></a>
 												</h2>
 											</td>														
 											<td><?php echo htmlentities($row->reference_ent); ?></td>

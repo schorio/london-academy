@@ -86,7 +86,7 @@
 			}
 
 			$.ajax({
-			url:"/epn/includes/fetchdata.php",
+			url:"/london-academy/includes/fetchdata.php",
 			method:"POST",
 			data:{action:action, query:query},
 				success:function(data)

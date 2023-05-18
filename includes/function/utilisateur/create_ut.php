@@ -3,7 +3,7 @@
 include_once('../../includes/config.php');
 
 if($_POST["password_ut"] !== $_POST["confirmPassword"]){
-    header("Location: /epn/liste/utilisateur/ut.php?message=Ereur de confirmation mot de pass");
+    header("Location: /london-academy/liste/utilisateur/ut.php?message=Ereur de confirmation mot de pass");
 }
 
 $req = $dbh->prepare("SELECT * FROM utilisateur WHERE username_ut = :username_ut");
@@ -14,7 +14,7 @@ $result = $req->fetch(PDO::FETCH_ASSOC);
 
 if($result){
     $message = "Compte existe déja";
-    header("Location: /epn/liste/utilisateur/ut.php?message=$message");
+    header("Location: /london-academy/liste/utilisateur/ut.php?message=$message");
 }
 
 if(!$result){
@@ -32,7 +32,7 @@ if(!$result){
     //grabbing the picture
 		$file = $_FILES['image_ut']['name'];
 		$file_loc = $_FILES['image_ut']['tmp_name'];
-		$folder="/epn/assets/img/"; 
+		$folder="/london-academy/assets/img/"; 
 		$new_file_name = strtolower($file);
 		$final_file=str_replace(' ','-',$new_file_name);
 
@@ -52,5 +52,5 @@ if(!$result){
     $req->execute();
     
     $message = "Compte créé";
-    header("Location: /epn/liste/utilisateur/ut.php?message=$message&type=success");
+    header("Location: /london-academy/liste/utilisateur/ut.php?message=$message&type=success");
 }

@@ -340,7 +340,7 @@
 						<div class="col-md-12">
 							<div class="welcome-box">
 								<div class="welcome-img">
-									<img alt="" src="/epn/assets/img/utilisateur/<?php echo $r_user['image_ut']; ?>">
+									<img alt="" src="/london-academy/assets/img/utilisateur/<?php echo $r_user['image_ut']; ?>">
 								</div>
 								<div class="welcome-det">
 									<h3>Bienvenue, <?php echo htmlentities(ucfirst($_SESSION['userlogin']))." [".$_SESSION['departement']."]";?></h3>

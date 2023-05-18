@@ -135,7 +135,7 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="/epn/profile.php?id=<?php echo htmlentities($row->id_inv); ?> "> <?php echo htmlentities($row->piece_inv); ?><span><?php echo htmlentities($row->fournisseur_inv); ?></span></a>
+													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_inv); ?> "> <?php echo htmlentities($row->piece_inv); ?><span><?php echo htmlentities($row->fournisseur_inv); ?></span></a>
 												</h2>
 											</td>														
 											<td><?php echo htmlentities($row->categorie_inv); ?></td>

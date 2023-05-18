@@ -23,7 +23,7 @@
         $query->execute();
         $lastInsert = $dbh->lastInsertId();
         if($lastInsert>0){
-            echo "<script>window.location.href='/epn/liste/entree/entree.php';</script>";
+            echo "<script>window.location.href='/london-academy/liste/entree/entree.php';</script>";
         }else{
             echo "<script>alert('Une erreur s'est survenue');</script>";
         }
@@ -35,7 +35,7 @@
 		$supprimer_id = $_POST['supprimer_id'];
 		$sql = "DELETE FROM entree WHERE id_ent='$supprimer_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/entree/entree.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/entree/entree.php"</script>';
 		} else {
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -63,7 +63,7 @@
 			WHERE id_ent='$modifier_id' ";
 
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/entree/entree.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/entree/entree.php"</script>';
 		} else {
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}

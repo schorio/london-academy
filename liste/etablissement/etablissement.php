@@ -158,7 +158,7 @@
 											<h3 class="project-title">
 
 												<?php if (($_SESSION["role"] === $config["ROLES"][0]) || ($_SESSION['departement'] === $code_departement)) :?>
-													<a href="/epn/liste/etablissement/list_par_etablissement.php?code_e=<?php echo $code_etablissement ?>">
+													<a href="/london-academy/liste/etablissement/list_par_etablissement.php?code_e=<?php echo $code_etablissement ?>">
 												<?php endif ?>
 
 													<?php echo $code_etablissement; ?>
@@ -183,7 +183,7 @@
 												<div>Chef de l'etablissement :</div>
 												<ul class="team-members">
 													<li>
-														<a href="/epn/profile.php?id=<?php echo $id_chef_etablissement; ?>" data-toggle="tooltip" title="<?php echo $nom_chef_etablissement.' '.$prenom_chef_etablissement; ?>"><img alt="" src="/epn/assets/img/employee/<?php echo $image_chef_etablissement; ?>"></a>
+														<a href="/london-academy/profile.php?id=<?php echo $id_chef_etablissement; ?>" data-toggle="tooltip" title="<?php echo $nom_chef_etablissement.' '.$prenom_chef_etablissement; ?>"><img alt="" src="/london-academy/assets/img/employee/<?php echo $image_chef_etablissement; ?>"></a>
 													</li>
 												</ul>
 											</div>
@@ -209,7 +209,7 @@
 													?>
 
 													<li>
-														<a href="/epn/profile.php?id=<?php echo $avatar_id_employee; ?>" data-toggle="tooltip" title="<?php echo $avatar_nom.' '.$avatar_prenom; ?>"><img alt="" src="/epn/assets/img/employee/<?php echo $avatar_image; ?>"></a>
+														<a href="/london-academy/profile.php?id=<?php echo $avatar_id_employee; ?>" data-toggle="tooltip" title="<?php echo $avatar_nom.' '.$avatar_prenom; ?>"><img alt="" src="/london-academy/assets/img/employee/<?php echo $avatar_image; ?>"></a>
 													</li>
 
 													<?php 
@@ -301,7 +301,7 @@
 				}
 
 				$.ajax({
-				url:"/epn/includes/fetchdata.php",
+				url:"/london-academy/includes/fetchdata.php",
 				method:"POST",
 				data:{action:action, query:query},
 					success:function(data)

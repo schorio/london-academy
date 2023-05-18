@@ -131,8 +131,8 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="/epn/profile.php?id=<?php echo htmlentities($row->id_tech); ?>" class="avatar"><img alt="image" src="/epn/assets/img/technicien/<?php echo htmlentities($row->image_tech); ?>"></a>
-													<a href="/epn/profile.php?id=<?php echo htmlentities($row->id_tech); ?> "> <?php echo htmlentities($row->libelle_tech); ?><span><?php echo htmlentities($row->libelle_tech); ?></span></a>
+													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_tech); ?>" class="avatar"><img alt="image" src="/london-academy/assets/img/technicien/<?php echo htmlentities($row->image_tech); ?>"></a>
+													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_tech); ?> "> <?php echo htmlentities($row->libelle_tech); ?><span><?php echo htmlentities($row->libelle_tech); ?></span></a>
 												</h2>
 											</td>														
 											<td>indisponible</td>

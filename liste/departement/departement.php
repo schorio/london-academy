@@ -181,7 +181,7 @@
 												<div>Chef du departement :</div>
 												<ul class="team-members">
 													<li>
-														<a href="/epn/profile.php?id=<?php echo $id_chef_departement; ?>" data-toggle="tooltip" title="<?php echo $nom_chef_departement.' '.$prenom_chef_departement; ?>"><img alt="" src="/epn/assets/img/employee/<?php echo $image_chef_departement; ?>"></a>
+														<a href="/london-academy/profile.php?id=<?php echo $id_chef_departement; ?>" data-toggle="tooltip" title="<?php echo $nom_chef_departement.' '.$prenom_chef_departement; ?>"><img alt="" src="/london-academy/assets/img/employee/<?php echo $image_chef_departement; ?>"></a>
 													</li>
 												</ul>
 											</div>
@@ -206,7 +206,7 @@
 													?>
 
 													<li>
-														<a href="/epn/profile.php?id=<?php echo $avatar_id_employee; ?>" data-toggle="tooltip" title="<?php echo $avatar_nom.' '.$avatar_prenom; ?>"><img alt="" src="/epn/assets/img/employee/<?php echo $avatar_image; ?>"></a>
+														<a href="/london-academy/profile.php?id=<?php echo $avatar_id_employee; ?>" data-toggle="tooltip" title="<?php echo $avatar_nom.' '.$avatar_prenom; ?>"><img alt="" src="/london-academy/assets/img/employee/<?php echo $avatar_image; ?>"></a>
 													</li>
 
 													<?php 

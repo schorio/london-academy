@@ -171,7 +171,7 @@
 													?>
 
 													<li>
-														<a href="/epn/profile.php?id=<?php echo $avatar_id_employee; ?>" data-toggle="tooltip" title="<?php echo $avatar_nom.' '.$avatar_prenom; ?>"><img alt="" src="/epn/assets/img/employee/<?php echo $avatar_image; ?>"></a>
+														<a href="/london-academy/profile.php?id=<?php echo $avatar_id_employee; ?>" data-toggle="tooltip" title="<?php echo $avatar_nom.' '.$avatar_prenom; ?>"><img alt="" src="/london-academy/assets/img/employee/<?php echo $avatar_image; ?>"></a>
 													</li>
 
 													<?php 

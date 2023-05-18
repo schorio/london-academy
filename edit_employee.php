@@ -73,7 +73,7 @@
 							<div class="col-sm-12">
 							<h3 class="page-title">Employés</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="/epn/liste/employee/employees.php">Listes des employés</a></li>
+									<li class="breadcrumb-item"><a href="/london-academy/liste/employee/employees.php">Listes des employés</a></li>
 									<li class="breadcrumb-item active">Modifier un(e) employé(e)</li>
 								</ul>
 							</div>
@@ -134,7 +134,7 @@
 									<input type="hidden" name="id_employee" value="<?php echo $id_employee; ?>">
 									<div class="col-md-12">
 										<div class="profile-img-wrap edit-img">
-											<img id="photo" class="inline-block" src="/epn/assets/img/employee/<?php echo $image; ?>" alt="user">
+											<img id="photo" class="inline-block" src="/london-academy/assets/img/employee/<?php echo $image; ?>" alt="user">
 											<input class="form-control" name="image_2" value="<?php echo $image; ?>" type="hidden">
 											<div class="fileupload btn">
 												<span id="uploadBtn" class="btn-text">edit</span>

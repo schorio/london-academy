@@ -102,7 +102,7 @@
 						<div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
 							<div class="profile-widget">
 								<div class="profile-img">
-									<a href="list_par_grade.php?code_g=<?php echo $code_grade ?>" class="avatar"><img src="/epn/assets/img/DGFAG.png" alt="image"></a>
+									<a href="list_par_grade.php?code_g=<?php echo $code_grade ?>" class="avatar"><img src="/london-academy/assets/img/DGFAG.png" alt="image"></a>
 								</div>
 
 								<?php if ($_SESSION["role"] === $config["ROLES"][0]) :?>

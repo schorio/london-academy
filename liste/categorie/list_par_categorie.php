@@ -170,7 +170,7 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="profile.php?id=<?php echo $id_employee ?>" class="avatar"><img alt="image" src="/epn/assets/img/employee/<?php echo htmlentities($row->image);?>"></a>
+													<a href="profile.php?id=<?php echo $id_employee ?>" class="avatar"><img alt="image" src="/london-academy/assets/img/employee/<?php echo htmlentities($row->image);?>"></a>
 													<a href="profile.php?id=<?php echo $id_employee ?>"><?php echo htmlentities($row->nom)." ".htmlentities($row->prenom); ?><span><?php echo htmlentities($row->code_departement);?></span></a>
 												</h2>
 											</td>

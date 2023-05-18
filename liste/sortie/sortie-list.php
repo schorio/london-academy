@@ -132,7 +132,7 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="/epn/profile.php?id=<?php echo htmlentities($row->id_sort); ?> "> <?php echo htmlentities($row->piece_sort); ?><span><?php echo htmlentities($row->technicien_sort); ?></span></a>
+													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_sort); ?> "> <?php echo htmlentities($row->piece_sort); ?><span><?php echo htmlentities($row->technicien_sort); ?></span></a>
 												</h2>
 											</td>														
 											<td><?php echo htmlentities($row->quantite_sort); ?></td>

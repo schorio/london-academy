@@ -1,7 +1,7 @@
 <?php 
 
 $config = [
-    "URL" => "http://localhost/epn/",
+    "URL" => "http://localhost/london-academy/",
     "DB_HOST" => "localhost",
     "DB_NAME" => "e-stock",
     "DB_USER" => "root",

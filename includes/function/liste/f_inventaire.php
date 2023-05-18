@@ -23,7 +23,7 @@
 		$query->execute();
 		$lastInsert = $dbh->lastInsertId();
 		if($lastInsert>0){
-			echo "<script>window.location.href='/epn/liste/inventaire/inventaire.php';</script>";
+			echo "<script>window.location.href='/london-academy/liste/inventaire/inventaire.php';</script>";
 		}else{
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -35,7 +35,7 @@
 		$supprimer_id = $_POST['supprimer_id'];
 		$sql = "DELETE FROM inventaire WHERE id_inv='$supprimer_id' ";
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/inventaire/inventaire.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/inventaire/inventaire.php"</script>';
 		} else {
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}
@@ -61,7 +61,7 @@
 			WHERE id_inv='$modifier_id' ";
 
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>window.location.href="/epn/liste/inventaire/inventaire.php"</script>';
+			echo '<script>window.location.href="/london-academy/liste/inventaire/inventaire.php"</script>';
 		} else {
 			echo "<script>alert('Une erreur s'est survenue');</script>";
 		}

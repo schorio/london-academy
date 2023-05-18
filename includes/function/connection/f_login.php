@@ -25,7 +25,7 @@
 					$_SESSION['id_ut']=$row->id_ut;
 					// $_SESSION['role']=$row->role_ut;
 					// $_SESSION['departement']=$row->departement_ut;
-					echo "<script>window.location.href='/epn/liste/fournisseur/fournisseur.php'; </script>";
+					echo "<script>window.location.href='/london-academy/liste/fournisseur/fournisseur.php'; </script>";
 				}
 				else 
 				{
