@@ -19,7 +19,21 @@
         $query->execute();
         $lastInsert = $dbh->lastInsertId();
         if($lastInsert>0){
-            echo "<script>window.location.href='/london-academy/liste/sortie/sortie.php';</script>";
+            $sql_1 = "UPDATE inventaire SET 
+				sortie_inv=sortie_inv+'$quantite_sort' WHERE id_inv='$piece_sort' ";
+            $sql_2 = "UPDATE inventaire SET 
+                sa_inv=sa_inv-'$quantite_sort' WHERE id_inv='$piece_sort' ";
+            $sql_3 = "UPDATE technicien SET 
+                nbSortie_tech=nbSortie_tech+'$quantite_sort' 
+                WHERE id_tech='$technicien_sort'";
+
+            if ($conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE) {
+                echo "<script>window.location.href='/london-academy/liste/sortie/sortie.php';</script>";
+            } else {
+                echo "<script>alert('Une erreur s'est survenue');</script>";
+            }
+            
+            
         }else{
             echo "<script>alert('Une erreur s'est survenue');</script>";
         }
