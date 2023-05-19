@@ -86,13 +86,13 @@
 								<input type="text" class="form-control" id="n_sa_inv" name="n_si_inv" value="<?php echo htmlentities($row->sa_inv); ?>" readonly>
 							</div>
 						</div>
-						<div class="col-sm-12">
+						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="n_stockage_inv">Stockage : </label>
 								<input type="text" class="form-control" id="n_stockage_inv" name="n_stockage_inv" value="<?php echo htmlentities($row->stockage_inv); ?>" autofocus>
 							</div>
 						</div>
-						<div class="col-sm-12">
+						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="n_observation_inv">Observation : </label>
 								<input type="text" class="form-control" id="n_observation_inv" name="n_observation_inv" value="<?php echo htmlentities($row->observation_inv); ?>" autofocus>

@@ -77,10 +77,16 @@
 								<input type="text" class="form-control" id="sa_inv" name="sa_inv" value="0" readonly>
 							</div>
 						</div>
-						<div class="col-sm-12">
+						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="stockage_inv">Stockage : </label>
 								<input type="text" class="form-control" id="stockage_inv" name="stockage_inv" autofocus>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="observation_inv">Observation : </label>
+								<input type="text" class="form-control" id="observation_inv" name="observation_inv" autofocus>
 							</div>
 						</div>
 					</div>

@@ -8,9 +8,10 @@
         $si_inv = htmlspecialchars($_POST['si_inv']);
         $sa_inv = htmlspecialchars($_POST['si_inv']);
         $stockage_inv = htmlspecialchars($_POST['stockage_inv']);
+		$observation_inv = htmlspecialchars($_POST['observation_inv']);
 
-		$sql = "INSERT INTO `inventaire` (`piece_inv`, `fournisseur_inv`, `categorie_inv`, `description_inv`, `si_inv`, `sa_inv`, `stockage_inv`) 
-                                VALUES   (:piece_inv, :fournisseur_inv, :categorie_inv, :description_inv, :si_inv, :sa_inv, :stockage_inv)";
+		$sql = "INSERT INTO `inventaire` (`piece_inv`, `fournisseur_inv`, `categorie_inv`, `description_inv`, `si_inv`, `sa_inv`, `stockage_inv`, `observation_inv`) 
+                                VALUES   (:piece_inv,  :fournisseur_inv,  :categorie_inv,  :description_inv,  :si_inv,  :sa_inv,  :stockage_inv,  :observation_inv)";
 
 		$query = $dbh->prepare($sql);
 		$query->bindParam(':piece_inv',$piece_inv,pdo::PARAM_STR);
@@ -20,6 +21,7 @@
         $query->bindParam(':si_inv',$si_inv,pdo::PARAM_STR);
         $query->bindParam(':sa_inv',$sa_inv,pdo::PARAM_STR);
         $query->bindParam(':stockage_inv',$stockage_inv,pdo::PARAM_STR);
+		$query->bindParam(':observation_inv',$observation_inv,pdo::PARAM_STR);
 		$query->execute();
 		$lastInsert = $dbh->lastInsertId();
 
