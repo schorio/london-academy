@@ -110,7 +110,7 @@
 
 											</h3>
 											<small class="block text-ellipsis m-b-15">
-												<span class="text-muted">Avec </span> <span class="text-xs"><?php echo htmlentities($row->nbEntree_frn); ?> Entree</span>
+												<span class="text-muted">Avec </span> <span class="text-xs"><?php echo htmlentities($row->nbEntree_frn); ?> entrée(s)</span>
 											</small><br><br><br>
 											<p>
 												<span class="text-muted">Chiffre d'affaire</span>
@@ -119,7 +119,7 @@
 												</small>
 											</p>
 
-											<p class="m-b-5">Observation <span class="text-success float-right"><?php echo htmlentities($row->observation_frn); ?></span></p>
+											<p class="m-b-5">Observation : <span class="text-success float-right"><?php echo htmlentities($row->observation_frn); ?></span></p>
 										</div>
 									</div>
 								</div>	
