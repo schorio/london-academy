@@ -24,10 +24,12 @@
             $sql_2 = "UPDATE inventaire SET 
                 sa_inv=sa_inv-'$quantite_sort' WHERE id_inv='$piece_sort' ";
             $sql_3 = "UPDATE technicien SET 
-                nbSortie_tech=nbSortie_tech+'$quantite_sort' 
-                WHERE id_tech='$technicien_sort'";
+                nbSortie_tech=nbSortie_tech+'$quantite_sort' WHERE id_tech='$technicien_sort'";
+            $sql_4 = "UPDATE categorie SET 
+                quantite_cat=quantite_cat-'$quantite_sort' 
+                WHERE id_cat=(SELECT categorie_inv FROM inventaire WHERE id_inv='$piece_sort')";
 
-            if ($conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE) {
+            if ($conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE and $conn->query($sql_4) === TRUE) {
                 echo "<script>window.location.href='/london-academy/liste/sortie/sortie.php';</script>";
             } else {
                 echo "<script>alert('Une erreur s'est survenue');</script>";
@@ -56,8 +58,11 @@
             $sql_3 = "UPDATE technicien SET 
                 nbSortie_tech=nbSortie_tech-'$quantite_sort' 
                 WHERE id_tech='$technicien_sort'";
+            $sql_4 = "UPDATE categorie SET 
+                quantite_cat=quantite_cat+'$quantite_sort' 
+                WHERE id_cat=(SELECT categorie_inv FROM inventaire WHERE id_inv='$piece_sort')";
 
-            if ($conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE) {
+            if ($conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE and $conn->query($sql_4) === TRUE) {
                 echo "<script>window.location.href='/london-academy/liste/sortie/sortie.php';</script>";
             } else {
                 echo "<script>alert('Une erreur s'est survenue');</script>";
@@ -106,10 +111,16 @@
                 $sql_3 = "UPDATE technicien SET 
                     nbSortie_tech=nbSortie_tech+'$n_quantite_sort' 
                     WHERE id_tech='$n_technicien_sort'";
+                $n_sql_4 = "UPDATE categorie SET 
+                    quantite_cat=quantite_cat+'$quantite_sort' 
+                    WHERE id_cat=(SELECT categorie_inv FROM inventaire WHERE id_inv='$piece_sort')";
+                $sql_4 = "UPDATE categorie SET 
+                    quantite_cat=quantite_cat-'$n_quantite_sort' 
+                    WHERE id_cat=(SELECT categorie_inv FROM inventaire WHERE id_inv='$n_piece_sort')";
 
 
-                if ($conn->query($n_sql_1) === TRUE and $conn->query($n_sql_2) === TRUE and $conn->query($n_sql_3) === TRUE 
-                    and $conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE) {
+                if ($conn->query($n_sql_1) === TRUE and $conn->query($n_sql_2) === TRUE and $conn->query($n_sql_3) === TRUE and $conn->query($n_sql_4) === TRUE 
+                    and $conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE and $conn->query($sql_4) === TRUE) {
                         echo '<script>window.location.href="/london-academy/liste/sortie/sortie.php"</script>';
                 } else {
                     echo "<script>alert('Une erreur s'est survenue');</script>";
