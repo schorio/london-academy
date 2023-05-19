@@ -108,9 +108,9 @@
 
 													<?php echo htmlentities($row->libelle_cat); ?>
 
-											</h3><br><br><br>
+											</h3><br><br>
 											<p>
-												<span class="text-muted"><?php echo htmlentities($row->quantite_cat); ?></span>
+												<h3><span class="text-muted"><?php echo htmlentities($row->quantite_cat); ?></span></h3>
 												<small class="block text-ellipsis m-b-15">
 													<span class="text-xs">produit(s)</span>
 												</small>
