@@ -85,7 +85,12 @@
 					<!-- user profiles list starts her -->
 					<div class="row">
 								<?php
-										$sql = "SELECT * FROM sortie";
+										$sql = "SELECT * FROM sortie
+													JOIN inventaire ON sortie.piece_sort=inventaire.id_inv
+													JOIN technicien ON sortie.technicien_sort=technicien.id_tech
+												ORDER BY date_sort ASC
+											";
+
 										$query = $dbh->prepare($sql);
 										$query->execute();
 										$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -110,11 +115,11 @@
 											
 											<h3 class="project-title">
 												<span class="text-muted"><?php echo htmlentities($row->quantite_sort); ?></span> 
-												<?php echo htmlentities($row->piece_sort); ?>
+												<?php echo htmlentities($row->piece_inv); ?>
 											</h3>
 											<small class="block text-ellipsis m-b-15">
 												<span class="text-xs">par </span>
-												<span class="text-muted"><?php echo htmlentities($row->technicien_sort); ?></span>
+												<span class="text-muted"><?php echo htmlentities($row->libelle_tech); ?></span>
 											</small><br><br>
 
 											

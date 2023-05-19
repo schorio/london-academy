@@ -118,7 +118,11 @@
 									<tbody>
 									<?php
 
-										$sql = "SELECT * FROM sortie";
+										$sql = "SELECT * FROM sortie
+												JOIN inventaire ON sortie.piece_sort=inventaire.id_inv
+												JOIN technicien ON sortie.technicien_sort=technicien.id_tech
+											ORDER BY date_sort ASC
+										";
 										$query = $dbh->prepare($sql);
 										$query->execute();
 										$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -132,12 +136,12 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_sort); ?> "> <?php echo htmlentities($row->piece_sort); ?><span><?php echo htmlentities($row->technicien_sort); ?></span></a>
+													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_sort); ?> "> <?php echo htmlentities($row->piece_inv); ?><span><?php echo htmlentities($row->libelle_tech); ?></span></a>
 												</h2>
 											</td>														
 											<td><?php echo htmlentities($row->quantite_sort); ?></td>
 											<td><?php echo htmlentities($row->date_sort); ?></td>
-											<td><?php echo htmlentities($row->technicien_sort); ?></td>
+											<td><?php echo htmlentities($row->libelle_tech); ?></td>
 											<td><?php echo htmlentities($row->observation_sort); ?></td>
 											<td class="text-right">
 												<div class="dropdown dropdown-action">
