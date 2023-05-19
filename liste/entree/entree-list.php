@@ -109,6 +109,7 @@
 										<!-- <tr> -->
 										<th>Produit</th>
 										<th>Reference</th>
+										<th>Fournisseur</th>
 										<th>Quantité</th>
 										<th>Prix unitaire</th>
 										<th>Montant</th>
@@ -120,7 +121,11 @@
 									<tbody>
 									<?php
 
-										$sql = "SELECT * FROM entree";
+										$sql = "SELECT * FROM entree
+												JOIN inventaire ON entree.piece_ent=inventaire.id_inv
+												JOIN fournisseur ON inventaire.fournisseur_inv=fournisseur.id_frn
+											ORDER BY date_ent ASC
+										";
 										$query = $dbh->prepare($sql);
 										$query->execute();
 										$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -134,10 +139,11 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_ent); ?> "> <?php echo htmlentities($row->piece_ent); ?><span><?php echo htmlentities($row->reference_ent); ?></span></a>
+													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_ent); ?> "> <?php echo htmlentities($row->piece_inv); ?><span><?php echo htmlentities($row->reference_ent); ?></span></a>
 												</h2>
 											</td>														
 											<td><?php echo htmlentities($row->reference_ent); ?></td>
+											<td><?php echo htmlentities($row->libelle_frn); ?></td>
 											<td><?php echo htmlentities($row->quantite_ent); ?></td>
 											<td><?php echo htmlentities($row->pu_ent); ?></td>
 											<td><?php echo htmlentities($row->montant_ent); ?></td>

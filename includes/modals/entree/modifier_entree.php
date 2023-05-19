@@ -17,7 +17,7 @@
 								<label for="n_piece_ent">Produit : </label>
 								<input type="hidden" name="piece_ent" value="<?php echo htmlentities($row->piece_ent); ?>">
 								<select name="n_piece_ent" class="select action">
-									<option value="<?php echo htmlentities($row->piece_ent); ?>"><?php echo htmlentities($row->piece_ent); ?></option>
+									<option value="<?php echo htmlentities($row->piece_ent); ?>"><?php echo htmlentities($row->piece_inv); ?></option>
 									<?php 
 										$sql2 = "SELECT * from inventaire";
 										$query2 = $dbh -> prepare($sql2);

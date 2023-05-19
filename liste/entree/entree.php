@@ -85,7 +85,11 @@
 					<!-- user profiles list starts her -->
 					<div class="row">
 								<?php
-										$sql = "SELECT * FROM entree";
+										$sql = "SELECT * FROM entree
+												JOIN inventaire ON entree.piece_ent=inventaire.id_inv
+												JOIN fournisseur ON inventaire.fournisseur_inv=fournisseur.id_frn
+											ORDER BY date_ent ASC
+										";
 										$query = $dbh->prepare($sql);
 										$query->execute();
 										$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -110,7 +114,7 @@
 											
 											<h3 class="project-title">
 												<span class="text-muted"><?php echo htmlentities($row->quantite_ent); ?></span> 
-												<?php echo htmlentities($row->piece_ent); ?>
+												<?php echo htmlentities($row->piece_inv); ?>
 											</h3>
 											<small class="block text-ellipsis m-b-15">
 												<span class="text-muted"><?php echo htmlentities($row->reference_ent); ?></span>
