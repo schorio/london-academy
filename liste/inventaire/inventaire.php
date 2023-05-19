@@ -119,12 +119,14 @@
 
 											</h3>
 											<small class="block text-ellipsis m-b-15">
-												<span class="text-muted"> > </span> <span class="text-xs"><?php echo htmlentities($row->si_inv); ?> de stock initial</span>
+												<span class="text-muted"> <?php echo htmlentities($row->si_inv); ?></span> <span class="text-xs"> stock initial</span>
 												<br>
-												<span class="text-muted"> > </span> <span class="text-xs"><?php echo htmlentities($row->sa_inv); ?> de stock actuel</span>
+												<span class="text-muted"> <?php echo htmlentities($row->sa_inv); ?></span> <span class="text-xs"> stock actuel</span>
 											</small><br><br><br>
-											<p>
+											<h4>
 												<span class="text-muted"><?php echo htmlentities($row->libelle_frn); ?></span>
+											</h4>
+											<p>
 												<small class="block text-ellipsis m-b-15">
 													<span class="text-muted">de categorie </span> <span class="text-xs"><?php echo htmlentities($row->libelle_cat); ?></span>
 												</small>
