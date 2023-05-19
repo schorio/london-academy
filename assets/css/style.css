@@ -6190,6 +6190,14 @@ ul.comment-list li ul.children {
     margin-bottom: 0;
 }
 
+.quantite span {
+	font-size: 30px;
+}
+
+.total span {
+	font-size: 25px;
+}
+
 /*-----------------
 	60. Performance Review
 -----------------------*/

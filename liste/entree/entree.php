@@ -112,20 +112,23 @@
 													</div>
 												</div>
 											
-											<h3 class="project-title">
+											<h4 class="project-title quantite">
 												<span class="text-muted"><?php echo htmlentities($row->quantite_ent); ?></span> 
 												<?php echo htmlentities($row->piece_inv); ?>
-											</h3>
+											</h4>
 											<small class="block text-ellipsis m-b-15">
 												<span class="text-muted"><?php echo htmlentities($row->reference_ent); ?></span>
 											</small><br><br>
 
-											<h3><span class="text-muted"><?php echo htmlentities($row->montant_ent); ?> $</span></h3>
+											<h6 class="total">TOTAL : 
+												<br><span class="text-muted"><?php echo htmlentities($row->montant_ent); ?> $</span>
+											</h6>
+											
 											<p>
 												<small class="block text-ellipsis m-b-15">
 													<span class="text-xs"><?php echo htmlentities($row->date_ent); ?></span>
 												</small>
-											</p><br>
+											</p>
 
 											<p class="m-b-5">Observation : <span class="text-success float-right"><?php echo htmlentities($row->observation_ent); ?></span></p>
 										</div>
