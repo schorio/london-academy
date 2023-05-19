@@ -23,7 +23,7 @@
 								<label for="n_fournisseur_inv">Fournisseur : </label>
 								<select required name="n_fournisseur_inv" class="select action">
 									<option value="<?php echo htmlentities($row->fournisseur_inv); ?>">
-										<?php echo htmlentities($row->fournisseur_inv); ?>
+										<?php echo htmlentities($row->libelle_frn); ?>
 									</option>
 									<?php 
 										$sql2 = "SELECT * from fournisseur";
@@ -48,7 +48,7 @@
 								<input type="hidden" class="form-control" id="categorie_inv" name="categorie_inv" value="<?php echo htmlentities($row->categorie_inv); ?>">
 								<select required name="n_categorie_inv" class="select action">
 									<option value="<?php echo htmlentities($row->categorie_inv); ?>">
-										<?php echo htmlentities($row->categorie_inv); ?>
+										<?php echo htmlentities($row->libelle_cat); ?>
 									</option>
 									<?php 
 										$sql2 = "SELECT * from categorie";

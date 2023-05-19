@@ -86,7 +86,11 @@
 					<!-- user profiles list starts her -->
 					<div class="row">
 								<?php
-										$sql = "SELECT * FROM inventaire";
+										$sql = "SELECT * FROM inventaire
+													JOIN fournisseur ON fournisseur_inv=id_frn
+													JOIN categorie ON categorie_inv=id_cat
+												ORDER BY piece_inv ASC
+										";
 										$query = $dbh->prepare($sql);
 										$query->execute();
 										$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -120,9 +124,9 @@
 												<span class="text-muted"> > </span> <span class="text-xs"><?php echo htmlentities($row->sa_inv); ?> de stock actuel</span>
 											</small><br><br><br>
 											<p>
-												<span class="text-muted"><?php echo htmlentities($row->fournisseur_inv); ?></span>
+												<span class="text-muted"><?php echo htmlentities($row->libelle_frn); ?></span>
 												<small class="block text-ellipsis m-b-15">
-													<span class="text-muted">de categorie </span> <span class="text-xs"><?php echo htmlentities($row->categorie_inv); ?></span>
+													<span class="text-muted">de categorie </span> <span class="text-xs"><?php echo htmlentities($row->libelle_cat); ?></span>
 												</small>
 											</p>
 

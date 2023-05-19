@@ -121,7 +121,11 @@
 									<tbody>
 									<?php
 
-										$sql = "SELECT * FROM inventaire";
+										$sql = "SELECT * FROM inventaire
+													JOIN fournisseur ON fournisseur_inv=id_frn
+													JOIN categorie ON categorie_inv=id_cat
+												ORDER BY piece_inv ASC
+										";
 										$query = $dbh->prepare($sql);
 										$query->execute();
 										$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -135,10 +139,10 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_inv); ?> "> <?php echo htmlentities($row->piece_inv); ?><span><?php echo htmlentities($row->fournisseur_inv); ?></span></a>
+													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_inv); ?> "> <?php echo htmlentities($row->piece_inv); ?><span><?php echo htmlentities($row->libelle_frn); ?></span></a>
 												</h2>
 											</td>														
-											<td><?php echo htmlentities($row->categorie_inv); ?></td>
+											<td><?php echo htmlentities($row->libelle_cat); ?></td>
 											<td><?php echo htmlentities($row->si_inv); ?></td>
 											<td><?php echo htmlentities($row->sa_inv); ?></td>
 											<td><?php echo htmlentities($row->description_inv); ?></td>
