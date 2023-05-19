@@ -119,7 +119,7 @@
 												</small>
 											</p>
 
-											<p class="m-b-5">Pourcentage <span class="text-success float-right">%</span></p>
+											<p class="m-b-5">Observation <span class="text-success float-right"><?php echo htmlentities($row->observation_frn); ?></span></p>
 										</div>
 									</div>
 								</div>	
