@@ -33,8 +33,11 @@
             $sql_4 = "UPDATE fournisseur SET 
                 ca_frn=ca_frn+'$montant_ent' 
                 WHERE id_frn=(SELECT fournisseur_inv from inventaire WHERE id_inv='$piece_ent')";
+            $sql_5 = "UPDATE categorie SET 
+                quantite_cat=quantite_cat+'$quantite_ent' 
+                WHERE id_cat=(SELECT categorie_inv from inventaire WHERE id_inv='$piece_ent')";
 
-            if ($conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE and $conn->query($sql_4) === TRUE) {
+            if ($conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE and $conn->query($sql_4) === TRUE and $conn->query($sql_5) === TRUE) {
                 echo "<script>window.location.href='/london-academy/liste/entree/entree.php';</script>";
             } else {
                 echo "<script>alert('Une erreur s'est survenue');</script>";
@@ -69,8 +72,11 @@
             $sql_4 = "UPDATE fournisseur SET 
                 ca_frn=ca_frn - '$montant_ent' 
                 WHERE id_frn=(SELECT fournisseur_inv from inventaire WHERE id_inv='$piece_ent')";
+            $sql_5 = "UPDATE categorie SET 
+                quantite_cat=quantite_cat-'$quantite_ent' 
+                WHERE id_cat=(SELECT categorie_inv from inventaire WHERE id_inv='$piece_ent')";
 
-            if ($conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE and $conn->query($sql_4) === TRUE) {
+            if ($conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE and $conn->query($sql_4) === TRUE and $conn->query($sql_5) === TRUE) {
                 echo "<script>window.location.href='/london-academy/liste/entree/entree.php';</script>";
             } else {
                 echo "<script>alert('Une erreur s'est survenue');</script>";
@@ -135,9 +141,15 @@
                 $sql_4 = "UPDATE fournisseur SET 
                     ca_frn=ca_frn+'$n_montant_ent' 
                     WHERE id_frn=(SELECT fournisseur_inv from inventaire WHERE id_inv='$n_piece_ent')";
+                $n_sql_5 = "UPDATE categorie SET 
+                    quantite_cat=quantite_cat-'$quantite_ent' 
+                    WHERE id_cat=(SELECT categorie_inv from inventaire WHERE id_inv='$piece_ent')";
+                $sql_5 = "UPDATE categorie SET 
+                    quantite_cat=quantite_cat+'$n_quantite_ent' 
+                    WHERE id_cat=(SELECT categorie_inv from inventaire WHERE id_inv='$n_piece_ent')";
 
-                if ($conn->query($n_sql_1) === TRUE and $conn->query($n_sql_2) === TRUE and $conn->query($n_sql_3) === TRUE and $conn->query($n_sql_4) === TRUE 
-                    and $conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE and $conn->query($sql_4) === TRUE) {
+                if ($conn->query($n_sql_1) === TRUE and $conn->query($n_sql_2) === TRUE and $conn->query($n_sql_3) === TRUE and $conn->query($n_sql_4) === TRUE and $conn->query($n_sql_5) === TRUE 
+                    and $conn->query($sql_1) === TRUE and $conn->query($sql_2) === TRUE and $conn->query($sql_3) === TRUE and $conn->query($sql_4) === TRUE and $conn->query($sql_5) === TRUE) {
                     echo "<script>window.location.href='/london-academy/liste/entree/entree.php';</script>";
                 } else {
                     echo "<script>alert('Une erreur s'est survenue');</script>";
