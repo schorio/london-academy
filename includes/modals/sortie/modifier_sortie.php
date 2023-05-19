@@ -17,7 +17,7 @@
 								<label for="piece_sort">Produit : </label>
 								<input type="hidden" name="piece_sort" value="<?php echo htmlentities($row->piece_sort); ?>">
 								<select name="n_piece_sort" class="select action">
-									<option value="<?php echo htmlentities($row->piece_sort); ?>"><?php echo htmlentities($row->piece_sort); ?></option>
+									<option value="<?php echo htmlentities($row->piece_sort); ?>"><?php echo htmlentities($row->piece_inv); ?></option>
 									<?php 
 										$sql2 = "SELECT * from inventaire";
 										$query2 = $dbh -> prepare($sql2);
@@ -40,7 +40,7 @@
 								<label for="technicien_sort">Technicien : </label>
 								<input type="hidden" name="technicien_sort" value="<?php echo htmlentities($row->technicien_sort); ?>">
 								<select name="n_technicien_sort" class="select action">
-									<option value="<?php echo htmlentities($row->technicien_sort); ?>"><?php echo htmlentities($row->technicien_sort); ?></option>
+									<option value="<?php echo htmlentities($row->technicien_sort); ?>"><?php echo htmlentities($row->libelle_tech); ?></option>
 									<?php 
 										$sql2 = "SELECT * from technicien";
 										$query2 = $dbh -> prepare($sql2);
