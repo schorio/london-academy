@@ -113,7 +113,7 @@
 												<span class="text-muted">Avec </span> <span class="text-xs"><?php echo htmlentities($row->nbEntree_frn); ?> entrée(s)</span>
 											</small><br><br><br>
 											<p>
-												<span class="text-muted">Chiffre d'affaire</span>
+												<h4><span class="text-muted">Chiffre d'affaire</span></h4>
 												<small class="block text-ellipsis m-b-15">
 													<span class="text-muted">jusqu'à </span> <span class="text-xs"><?php echo htmlentities($row->ca_frn); ?> $</span>
 												</small>

@@ -113,10 +113,10 @@
 													</div>
 												</div>
 											
-											<h3 class="project-title">
+											<h4 class="project-title quantite">
 												<span class="text-muted"><?php echo htmlentities($row->quantite_sort); ?></span> 
 												<?php echo htmlentities($row->piece_inv); ?>
-											</h3>
+											</h4>
 											<small class="block text-ellipsis m-b-15">
 												<span class="text-xs">par </span>
 												<span class="text-muted"><?php echo htmlentities($row->libelle_tech); ?></span>
