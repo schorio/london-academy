@@ -140,6 +140,12 @@
 		$i++;
 		$k++;
 	}
+
+	$sql_2 = mysqli_query($link, "SELECT * FROM categorie");
+	foreach($sql_2 as $data) {
+		$libelle_cat[] = $data['libelle_cat'];
+		$quantite_cat[] = $data['quantite_cat'];
+	}
 ?>
 
 <!DOCTYPE html>
@@ -206,17 +212,30 @@
                 <div class="content container-fluid">
 					
 					<div class="row">
-						<div class="col-lg-6 col-md-6 chart-p">						
+						<div class="col-lg-8 col-md-8 chart-p">						
 							<div class="card shadow mb-4">
                                 <div class="card-body">
                                     <div class="chart-area">
-                                        <canvas height="200px" id="myChart"></canvas>
+                                        <canvas height="170px" id="myChart"></canvas>
                                     </div><hr>
                                     <p>Diagramme des produits entrées</p>
                                 </div>
                             </div>
 						</div>
-						<div class="col-lg-6 col-md-6 chart-p">						
+						<div class="col-lg-4 col-md-4 chart-p">						
+							<div class="card shadow mb-4">
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas height="200px" id="myChart_2"></canvas>
+                                    </div><hr>
+                                    <p>Diagramme des produits par categorie</p>
+                                </div>
+                            </div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-9 col-md-9 chart-p">						
 							<div class="card shadow mb-4">
                                 <div class="card-body">
                                     <div class="chart-area">
@@ -489,16 +508,15 @@
 			};
 		</script>
 
-		<!-- <script>
-			var ctx = document.getElementById("myChart_1");
-			// const labels = < echo json_encode($dep)?>;
+		<script>
+			var ctx = document.getElementById("myChart_2");
 
 			var myPieChart = new Chart(ctx, {
 				type: 'pie',
 				data: {
-					labels: <php echo json_encode($dep)?>,
+					labels: <?php echo json_encode($libelle_cat)?>,
 					datasets: [{
-									data: <php echo json_encode($totalcount_employee_1)?>,
+									data: <?php echo json_encode($quantite_cat)?>,
 									backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', 'ffff00', '40ff00'],
 									hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf', 'cc0000', '40ff00'],
 									hoverBorderColor: "rgba(234, 236, 244, 1)",
@@ -522,7 +540,7 @@
 							cutoutPercentage: 50,
 						},
 			});
-		</script> -->
+		</script>
 
 		<script>
 			const myChart = new Chart(
