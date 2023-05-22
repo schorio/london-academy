@@ -7,12 +7,8 @@
 							</li>
 
 
-							<li class="submenu">
-								<a href="#"><i class="la la-dashboard"></i> <span> Dashboard</span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li><a href="/london-academy/index.php"> -- Accueil</a></li>
-									<li><a href="/london-academy/employee-dashboard.php"> -- Mon dashboard</a></li>
-								</ul>
+							<li>
+								<a href="/london-academy/statistique.php"><i class="la la-dashboard"></i> <span> Dashboard</span></a>
 							</li>
 							
 
@@ -75,15 +71,6 @@
 							<li> 
 								<a href="/london-academy/includes/function/utilisateur/changer_mdp.php"><i class="la la-cogs"></i> <span>Paramètre</span></a>
 							</li>
-
-							<?php if ($_SESSION["role"] === $config["ROLES"][0]) :?>
-							<li class="menu-title"> 
-								<span>Administrateur</span>
-							</li>
-							<li> 
-								<a href="/london-academy/liste/utilisateur/ut.php"><i class="la la-user-plus"></i> <span>Utilisateurs</span></a>
-							</li>
-							<?php endif ?>
 
 
 							<li class="menu-title"> 
