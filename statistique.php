@@ -341,7 +341,7 @@
 									<h1 class="dash-sec-title">Quantitée total</h1>
 									<div class="dash-sec-content">
 										<div class="dash-info-list">
-											<a href="#" class="dash-card text-danger shadow">
+											<a href="" class="dash-card text-danger shadow">
 												<div class="dash-card-container">
 													<div class="dash-card-icon">
 														<i class="fa fa-hourglass-o"></i>
@@ -354,10 +354,10 @@
 										</div>
 
 										<div class="dash-info-list">
-											<a href="#" class="dash-card text-danger shadow">
+											<a href="" class="dash-card text-danger shadow">
 												<div class="dash-card-container">
 													<div class="dash-card-icon">
-														<i class="fa fa-suitcase"></i>
+														<i class="fa fa-clipboard"></i>
 													</div>
 													<div class="dash-card-content">
 														<p><?php echo $totalcount_sa; ?> stock actuel</p>
@@ -367,10 +367,10 @@
 										</div>
 
 										<div class="dash-info-list">
-											<a href="#" class="dash-card text-danger shadow">
+											<a href="" class="dash-card text-danger shadow">
 												<div class="dash-card-container">
 													<div class="dash-card-icon">
-														<i class="fa fa-building-o"></i>
+														<i class="fa fa-plus"></i>
 													</div>
 													<div class="dash-card-content">
 														<p><?php echo $totalcount_entree; ?> produit entrée</p>
@@ -380,10 +380,10 @@
 										</div>
 
 										<div class="dash-info-list">
-											<a href="#" class="dash-card text-danger shadow">
+											<a href="" class="dash-card text-danger shadow">
 												<div class="dash-card-container">
 													<div class="dash-card-icon">
-														<i class="fa fa-building-o"></i>
+														<i class="fa fa-share"></i>
 													</div>
 													<div class="dash-card-content">
 														<p><?php echo $totalcount_sortie; ?> produit sortie</p>
