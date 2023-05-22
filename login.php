@@ -47,8 +47,8 @@
 						<!-- /Account Logo -->
 						<div class="account-wrapper">
 							<div class="account-logo">
-								<!-- <a href="index.php"><img src="assets/img/logo2.png" alt="Company Logo"></a> -->
-								<a class="logo_2"><i class="fa fa-modx"></i>EPN.</a>
+								<a href="index.php"><img src="assets/img/logo.png" width="170" height="105" alt="Company Logo"></a>
+								<!-- <a class="logo_2"><i class="fa fa-modx"></i>EPN.</a> -->
 								
 							</div>
 							<h3 class="account-title">Login Administrateur </h3>

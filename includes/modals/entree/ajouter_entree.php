@@ -8,7 +8,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form method="POST" enctype="multipart/form-data">
+				<form method="POST" id="ajouter_form" name="ajouter_form" enctype="multipart/form-data">
 
 					<div class="row">
 						<div class="col-sm-12">
@@ -41,19 +41,19 @@
 						<div class="col-sm-3">
 							<div class="form-group">
 								<label for="quantite_ent">Quantite :</label>
-								<input type="number" class="form-control" id="quantite_ent" name="quantite_ent" value="0" autofocus>
+								<input type="number" class="form-control" id="i_quantite_ent" name="quantite_ent" value="0" autofocus>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="pu_ent">Prix unitaire : </label>
-								<input type="text" class="form-control" id="pu_ent" name="pu_ent" value="0" autofocus>
+								<input type="number" class="form-control" id="i_pu_ent" name="pu_ent" value="0" autofocus>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="montant_ent">Montant : </label>
-								<input type="text" class="form-control" id="montant_ent" name="montant_ent" autofocus>
+								<input type="number" class="form-control" id="i_montant_ent" name="montant_ent" value="0" autofocus>
 							</div>
 						</div>
 						<div class="col-sm-3">
@@ -78,3 +78,15 @@
 		</div>
 	</div>
 </div>
+<script>
+	$(document).ready(function(){
+		$('#i_quantite_ent, #i_pu_ent').change(function(){
+			var quantite_ent = document.getElementById("i_quantite_ent").value;
+			var pu_ent = document.getElementById("i_pu_ent").value;
+
+			var montant_ent = quantite_ent * pu_ent;
+
+			document.ajouter_form.montant_ent = montant_ent;
+		});
+	});
+</script>
