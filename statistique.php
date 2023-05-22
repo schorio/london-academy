@@ -146,6 +146,61 @@
 		$libelle_cat[] = $data['libelle_cat'];
 		$quantite_cat[] = $data['quantite_cat'];
 	}
+
+
+	$sql_3 = "SELECT id_inv from inventaire";
+	$query_3 = $dbh->prepare($sql_3);
+	$query_3->execute();
+	$results_3 = $query_3->fetchAll(PDO::FETCH_OBJ);
+	$totalcount_produit = $query_3->rowCount();
+
+	$sql_4 = "SELECT id_tech from technicien";
+	$query_4 = $dbh->prepare($sql_4);
+	$query_4->execute();
+	$results_4 = $query_4->fetchAll(PDO::FETCH_OBJ);
+	$totalcount_technicien = $query_4->rowCount();
+
+	$sql_5 = "SELECT id_frn from fournisseur";
+	$query_5 = $dbh->prepare($sql_5);
+	$query_5->execute();
+	$results_5 = $query_5->fetchAll(PDO::FETCH_OBJ);
+	$totalcount_fournisseur = $query_5->rowCount();
+
+	$sql_6 = "SELECT id_cat from categorie";
+	$query_6 = $dbh->prepare($sql_6);
+	$query_6->execute();
+	$results_6 = $query_6->fetchAll(PDO::FETCH_OBJ);
+	$totalcount_categorie = $query_6->rowCount();
+
+	$sql_7 = "SELECT SUM(si_inv) as somme FROM inventaire";
+	$query_7 = $dbh->prepare($sql_7);
+	$query_7->execute();
+	$row_7 = $query_7->fetch(PDO::FETCH_ASSOC);
+	$totalcount_si = $row_7['somme'];
+
+	$sql_8 = "SELECT SUM(sa_inv) as somme FROM inventaire";
+	$query_8 = $dbh->prepare($sql_8);
+	$query_8->execute();
+	$row_8 = $query_8->fetch(PDO::FETCH_ASSOC);
+	$totalcount_sa = $row_8['somme'];
+
+	$sql_9 = "SELECT SUM(entree_inv) as somme FROM inventaire";
+	$query_9 = $dbh->prepare($sql_9);
+	$query_9->execute();
+	$row_9 = $query_9->fetch(PDO::FETCH_ASSOC);
+	$totalcount_entree = $row_9['somme'];
+
+	$sql_10 = "SELECT SUM(sortie_inv) as somme FROM inventaire";
+	$query_10 = $dbh->prepare($sql_10);
+	$query_10->execute();
+	$row_10 = $query_10->fetch(PDO::FETCH_ASSOC);
+	$totalcount_sortie = $row_10['somme'];
+
+	$sql_11 = "SELECT SUM(montant_ent) as somme FROM entree";
+	$query_11 = $dbh->prepare($sql_11);
+	$query_11->execute();
+	$row_11 = $query_11->fetch(PDO::FETCH_ASSOC);
+	$totalcount_montant = $row_11['somme'];
 ?>
 
 <!DOCTYPE html>
@@ -221,29 +276,110 @@
                                     <p>Diagramme des produits entrées</p>
                                 </div>
                             </div>
+							<div class="card shadow mb-4">
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas height="170px" id="myChart_1"></canvas>
+                                    </div><hr>
+                                    <p>Diagramme des produits entrées</p>
+                                </div>
+                            </div>
 						</div>
 						<div class="col-lg-4 col-md-4 chart-p">						
 							<div class="card shadow mb-4">
                                 <div class="card-body">
                                     <div class="chart-area">
-                                        <canvas height="200px" id="myChart_2"></canvas>
+                                        <canvas height="300px" id="myChart_2"></canvas>
                                     </div><hr>
                                     <p>Diagramme des produits par categorie</p>
                                 </div>
                             </div>
-						</div>
-					</div>
+							<div class="dash-sidebar">
+								<h5 class="dash-title">Total</h5>
+								<div class="card shadow">
+									<div class="card-body">
+										<div class="time-list">
+											<div class="dash-stats-list">
+												<h4><?php echo $totalcount_produit; ?></h4>
+												<p>Produit</p>
+											</div>
+											<div class="dash-stats-list">
+												<h4><?php echo $totalcount_technicien; ?></h4>
+												<p>Technicien</p>
+											</div>
+										</div>
+										<div class="time-list">
+											<div class="dash-stats-list">
+												<h4><?php echo $totalcount_fournisseur; ?></h4>
+												<p>Fournisseur</p>
+											</div>
+											<div class="dash-stats-list">
+												<h4><?php echo $totalcount_categorie; ?></h4>
+												<p>Categorie</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<section class="dash-sidebar">
+									<h1 class="dash-sec-title">Quantitée total</h1>
+									<div class="dash-sec-content">
+										<div class="dash-info-list">
+											<a href="#" class="dash-card text-danger shadow">
+												<div class="dash-card-container">
+													<div class="dash-card-icon">
+														<i class="fa fa-hourglass-o"></i>
+													</div>
+													<div class="dash-card-content">
+														<p><?php echo $totalcount_si; ?> stock initial</p>
+													</div>
+												</div>
+											</a>
+										</div>
 
-					<div class="row">
-						<div class="col-lg-9 col-md-9 chart-p">						
-							<div class="card shadow mb-4">
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas height="200px" id="myChart_1"></canvas>
-                                    </div><hr>
-                                    <p>Diagramme des produits entrées</p>
-                                </div>
-                            </div>
+										<div class="dash-info-list">
+											<a href="#" class="dash-card text-danger shadow">
+												<div class="dash-card-container">
+													<div class="dash-card-icon">
+														<i class="fa fa-suitcase"></i>
+													</div>
+													<div class="dash-card-content">
+														<p><?php echo $totalcount_sa; ?> stock actuel</p>
+													</div>
+												</div>
+											</a>
+										</div>
+
+										<div class="dash-info-list">
+											<a href="#" class="dash-card text-danger shadow">
+												<div class="dash-card-container">
+													<div class="dash-card-icon">
+														<i class="fa fa-building-o"></i>
+													</div>
+													<div class="dash-card-content">
+														<p><?php echo $totalcount_entree; ?> produit entrée</p>
+													</div>
+												</div>
+											</a>
+										</div>
+
+										<div class="dash-info-list">
+											<a href="#" class="dash-card text-danger shadow">
+												<div class="dash-card-container">
+													<div class="dash-card-icon">
+														<i class="fa fa-building-o"></i>
+													</div>
+													<div class="dash-card-content">
+														<p><?php echo $totalcount_sortie; ?> produit sortie</p>
+													</div>
+												</div>
+											</a>
+										</div>
+
+									</div>
+								</section>
+							</div>
 						</div>
 					</div>
 
