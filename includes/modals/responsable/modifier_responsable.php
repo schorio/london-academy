@@ -1,6 +1,6 @@
 <div id="modifier_responsable<?php echo htmlentities($row->id_resp); ?>" class="modal custom-modal fade" role="dialog">
 	<form method="post" class="form-horizontal" role="form">
-		<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
@@ -24,7 +24,13 @@
 								<input type="text" class="form-control" id="n_nbSortie_resp" name="n_nbSortie_resp" value="<?php echo htmlentities($row->nbSortie_resp); ?>" readonly>
 							</div>
 						</div>
-						<div class="col-sm-12">
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for="n_nom_responsable">Matricule : </label>
+								<input type="text" class="form-control" id="n_matricule_resp" name="n_matricule_resp" value="<?php echo htmlentities($row->matricule_resp); ?>" autofocus>
+							</div>
+						</div>
+						<div class="col-sm-9">
 							<div class="form-group">
 								<label for="n_nom_responsable">Fonction : </label>
 								<input type="text" class="form-control" id="n_fonction_resp" name="n_fonction_resp" value="<?php echo htmlentities($row->fonction_resp); ?>" autofocus>

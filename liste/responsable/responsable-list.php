@@ -2,12 +2,8 @@
 	session_start();
 	error_reporting(0);
 	include_once('../../includes/config.php');
-	include_once("../../includes/functions.php");
-	if(strlen($_SESSION['userlogin'])==0){
-		header('location: ../../login.php');
-	}
-
- ?>
+	include_once("../../includes/function/liste/f_responsable.php"); 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,6 +104,7 @@
 									<thead>
 										<!-- <tr> -->
 										<th>Nom et prenom(s)</th>
+										<th>Matricule</th>
 										<th>Fonction</th>
 										<th>Nombre de sortie</th>
 										<th>Observation</th>
@@ -134,7 +131,8 @@
 													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_resp); ?>" class="avatar"><img alt="image" src="/london-academy/assets/img/responsable/<?php echo htmlentities($row->image_resp); ?>"></a>
 													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_resp); ?> "> <?php echo htmlentities($row->libelle_resp); ?><span><?php echo htmlentities($row->libelle_resp); ?></span></a>
 												</h2>
-											</td>														
+											</td>			
+											<td><?php echo htmlentities($row->matricule_resp); ?></td>											
 											<td><?php echo htmlentities($row->fonction_resp); ?></td>
 											<td><?php echo htmlentities($row->nbSortie_resp); ?></td>
 											<td><?php echo htmlentities($row->observation_resp); ?></td>

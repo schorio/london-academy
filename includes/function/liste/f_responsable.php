@@ -5,6 +5,7 @@
     if(isset($_POST['ajouter_resp'])){
 
         $libelle_resp = htmlspecialchars($_POST['libelle_resp']);
+        $matricule_resp = htmlspecialchars($_POST['matricule_resp']);
         $fonction_resp = htmlspecialchars($_POST['fonction_resp']);
         $image_resp = htmlspecialchars($_POST['image_resp']);
         //grabbing the picture
@@ -18,10 +19,11 @@
             $image_resp=$final_file;
         }
 
-        $sql = "INSERT INTO `responsable` (`libelle_resp`, `fonction_resp`,  `image_resp`) 
-                                    VALUES (:libelle_resp, :fonction_resp,  :pic)";
+        $sql = "INSERT INTO `responsable` (`libelle_resp`, `matricule_resp`, `fonction_resp`,  `image_resp`) 
+                                    VALUES (:libelle_resp, :matricule_resp,  :fonction_resp,   :pic)";
         $query = $dbh->prepare($sql);
         $query->bindParam(':libelle_resp',$libelle_resp,PDO::PARAM_STR);
+        $query->bindParam(':matricule_resp',$matricule_resp,PDO::PARAM_STR);
         $query->bindParam(':fonction_resp',$fonction_resp,PDO::PARAM_STR);
         $query->bindParam(':pic',$image_resp,PDO::PARAM_STR);
         $query->execute();
@@ -49,10 +51,12 @@
     if(isset($_POST['modifier_resp'])){
 		$modifier_id = $_POST['modifier_id'];
 		$n_libelle_resp = $_POST['n_libelle_resp'];
+        $n_matricule_resp = $_POST['n_matricule_resp'];
         $n_fonction_resp = $_POST['n_fonction_resp'];
 		$n_observation_resp = $_POST['n_observation_resp'];
 		$sql = "UPDATE responsable SET 
 			libelle_resp='$n_libelle_resp',
+            matricule_resp='$n_matricule_resp',
             fonction_resp='$n_fonction_resp',
 			observation_resp='$n_observation_resp'
 			WHERE id_resp='$modifier_id' ";
