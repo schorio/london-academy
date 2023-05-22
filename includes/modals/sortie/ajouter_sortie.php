@@ -34,19 +34,19 @@
 						</div>
 						<div class="col-sm-9">
 							<div class="form-group">
-								<label for="technicien_sort">Technicien : </label>
-								<select id="technicien_sort" required name="technicien_sort" class="select action">
-									<option>Selectionner le technicien </option>
+								<label for="responsable_sort">responsable : </label>
+								<select id="responsable_sort" required name="responsable_sort" class="select action">
+									<option>Selectionner le responsable </option>
 									<?php 
-										$sql2 = "SELECT * from technicien";
+										$sql2 = "SELECT * from responsable";
 										$query2 = $dbh -> prepare($sql2);
 										$query2->execute();
 										$result2=$query2->fetchAll(PDO::FETCH_OBJ);
-										foreach($result2 as $row_tech)
+										foreach($result2 as $row_resp)
 										{          
 									?>  
-										<option value="<?php echo htmlentities($row_tech->id_tech);?>">
-									<?php echo htmlentities($row_tech->libelle_tech);?></option>
+										<option value="<?php echo htmlentities($row_resp->id_resp);?>">
+									<?php echo htmlentities($row_resp->libelle_resp);?></option>
 									<?php
 										} 
 									?> 

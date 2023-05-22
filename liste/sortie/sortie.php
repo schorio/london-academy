@@ -87,7 +87,7 @@
 								<?php
 										$sql = "SELECT * FROM sortie
 													JOIN inventaire ON sortie.piece_sort=inventaire.id_inv
-													JOIN technicien ON sortie.technicien_sort=technicien.id_tech
+													JOIN responsable ON sortie.responsable_sort=responsable.id_resp
 												ORDER BY date_sort ASC
 											";
 
@@ -119,7 +119,7 @@
 											</h4>
 											<small class="block text-ellipsis m-b-15">
 												<span class="text-xs">par </span>
-												<span class="text-muted"><?php echo htmlentities($row->libelle_tech); ?></span>
+												<span class="text-muted"><?php echo htmlentities($row->libelle_resp); ?></span>
 											</small><br><br>
 
 											

@@ -18,7 +18,7 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title> Listes des techniciens</title>
+        <title> Listes des responsables</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/logo.png">
@@ -72,17 +72,17 @@
 					<div class="page-header">
 						<div class="row align-items-center">
 							<div class="col">
-								<h3 class="page-title">Technicien</h3>
+								<h3 class="page-title">Responsable</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="index.php">Listes</a></li>
-									<li class="breadcrumb-item active">Listes des techniciens</li>
+									<li class="breadcrumb-item active">Listes des responsables</li>
 								</ul>
 							</div>
 							<div class="col-auto float-right ml-auto">
-								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_technicien"><i class="fa fa-plus"></i> Ajouter un(e) technicien(ne)</a>
+								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#ajouter_responsable"><i class="fa fa-plus"></i> Ajouter un(e) responsable(ne)</a>
 								<div class="view-icons">
-									<a href="technicien.php" title="Grid View" class="grid-view btn btn-link active"><i class="fa fa-th"></i></a>
-									<a href="technicien-list.php" title="Tabular View" class="list-view btn btn-link"><i class="fa fa-bars"></i></a>
+									<a href="responsable.php" title="Grid View" class="grid-view btn btn-link active"><i class="fa fa-th"></i></a>
+									<a href="responsable-list.php" title="Tabular View" class="list-view btn btn-link"><i class="fa fa-bars"></i></a>
 								</div>
 							</div>
 						</div>
@@ -117,7 +117,7 @@
 									<tbody>
 									<?php
 
-										$sql = "SELECT * FROM technicien";
+										$sql = "SELECT * FROM responsable";
 										$query = $dbh->prepare($sql);
 										$query->execute();
 										$results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -131,19 +131,19 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_tech); ?>" class="avatar"><img alt="image" src="/london-academy/assets/img/technicien/<?php echo htmlentities($row->image_tech); ?>"></a>
-													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_tech); ?> "> <?php echo htmlentities($row->libelle_tech); ?><span><?php echo htmlentities($row->libelle_tech); ?></span></a>
+													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_resp); ?>" class="avatar"><img alt="image" src="/london-academy/assets/img/responsable/<?php echo htmlentities($row->image_resp); ?>"></a>
+													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_resp); ?> "> <?php echo htmlentities($row->libelle_resp); ?><span><?php echo htmlentities($row->libelle_resp); ?></span></a>
 												</h2>
 											</td>														
-											<td><?php echo htmlentities($row->fonction_tech); ?></td>
-											<td><?php echo htmlentities($row->nbSortie_tech); ?></td>
-											<td><?php echo htmlentities($row->observation_tech); ?></td>
+											<td><?php echo htmlentities($row->fonction_resp); ?></td>
+											<td><?php echo htmlentities($row->nbSortie_resp); ?></td>
+											<td><?php echo htmlentities($row->observation_resp); ?></td>
 											<td class="text-right">
 												<div class="dropdown dropdown-action">
 													<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 													<div class="dropdown-menu dropdown-menu-right">
-														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_technicien<?php echo htmlentities($row->id_tech); ?>"><i class="fa fa-trash-o m-r-5"></i> Modifier</a>
-														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_technicien<?php echo htmlentities($row->id_tech); ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#modifier_responsable<?php echo htmlentities($row->id_resp); ?>"><i class="fa fa-trash-o m-r-5"></i> Modifier</a>
+														<a class="dropdown-item" href="#" data-toggle="modal" data-target="#supprimer_responsable<?php echo htmlentities($row->id_resp); ?>"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
 													</div>
 												</div>
 											</td>
@@ -151,8 +151,8 @@
 											
 									<?php
 						
-										include("../../includes/modals/technicien/modifier_technicien.php");			
-										include("../../includes/modals/technicien/supprimer_technicien.php");
+										include("../../includes/modals/responsable/modifier_responsable.php");			
+										include("../../includes/modals/responsable/supprimer_responsable.php");
 
 												}
 										$cnt +=1; 
@@ -167,9 +167,9 @@
                 </div>
 				<!-- /Page Content -->
 				
-				<!-- Add technicien Modal -->
-				<?php include_once("../../includes/modals/technicien/ajouter_technicien.php"); ?>
-				<!-- /Add technicien Modal -->
+				<!-- Add responsable Modal -->
+				<?php include_once("../../includes/modals/responsable/ajouter_responsable.php"); ?>
+				<!-- /Add responsable Modal -->
 				
             </div>
 			<!-- /Page Wrapper -->
@@ -250,8 +250,8 @@
 	<tr>
 		<td>
 			<h2 class="table-avatar">
-				<a href="profile.php?id='.$id_technicien.'" class="avatar"><img alt="image" src="technicien/'.$image.'"></a>
-				<a href="profile.php?id='.$id_technicien.' ">'.$nom.'." ".'.$prenom.'<span>'.$code_departement.'</span></a>
+				<a href="profile.php?id='.$id_responsable.'" class="avatar"><img alt="image" src="responsable/'.$image.'"></a>
+				<a href="profile.php?id='.$id_responsable.' ">'.$nom.'." ".'.$prenom.'<span>'.$code_departement.'</span></a>
 			</h2>
 		</td>
 		<td>'.$matricule.'</td>
@@ -265,8 +265,8 @@
 			<div class="dropdown dropdown-action">
 				<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
 				<div class="dropdown-menu dropdown-menu-right">
-					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_technicien'.$id_technicien.'"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
-					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_technicien'.$id_technicien.'"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_responsable'.$id_responsable.'"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_responsable'.$id_responsable.'"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
 				</div>
 			</div>
 		</td>

@@ -110,7 +110,7 @@
 										<th>Produit</th>
 										<th>Quantité</th>
 										<th>Date de sortie</th>
-										<th>Technicien</th>
+										<th>responsable</th>
 										<th>Observatino</th>
 										<th class="text-right no-sort">Action</th>
 										<!-- </tr> -->
@@ -120,7 +120,7 @@
 
 										$sql = "SELECT * FROM sortie
 												JOIN inventaire ON sortie.piece_sort=inventaire.id_inv
-												JOIN technicien ON sortie.technicien_sort=technicien.id_tech
+												JOIN responsable ON sortie.responsable_sort=responsable.id_resp
 											ORDER BY date_sort ASC
 										";
 										$query = $dbh->prepare($sql);
@@ -136,12 +136,12 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_sort); ?> "> <?php echo htmlentities($row->piece_inv); ?><span><?php echo htmlentities($row->libelle_tech); ?></span></a>
+													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_sort); ?> "> <?php echo htmlentities($row->piece_inv); ?><span><?php echo htmlentities($row->libelle_resp); ?></span></a>
 												</h2>
 											</td>														
 											<td><?php echo htmlentities($row->quantite_sort); ?></td>
 											<td><?php echo htmlentities($row->date_sort); ?></td>
-											<td><?php echo htmlentities($row->libelle_tech); ?></td>
+											<td><?php echo htmlentities($row->libelle_resp); ?></td>
 											<td><?php echo htmlentities($row->observation_sort); ?></td>
 											<td class="text-right">
 												<div class="dropdown dropdown-action">

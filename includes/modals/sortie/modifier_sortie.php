@@ -37,20 +37,20 @@
 						</div>
 						<div class="col-sm-9">
 							<div class="form-group">
-								<label for="technicien_sort">Technicien : </label>
-								<input type="hidden" name="technicien_sort" value="<?php echo htmlentities($row->technicien_sort); ?>">
-								<select name="n_technicien_sort" class="select action">
-									<option value="<?php echo htmlentities($row->technicien_sort); ?>"><?php echo htmlentities($row->libelle_tech); ?></option>
+								<label for="responsable_sort">responsable : </label>
+								<input type="hidden" name="responsable_sort" value="<?php echo htmlentities($row->responsable_sort); ?>">
+								<select name="n_responsable_sort" class="select action">
+									<option value="<?php echo htmlentities($row->responsable_sort); ?>"><?php echo htmlentities($row->libelle_resp); ?></option>
 									<?php 
-										$sql2 = "SELECT * from technicien";
+										$sql2 = "SELECT * from responsable";
 										$query2 = $dbh -> prepare($sql2);
 										$query2->execute();
 										$result2=$query2->fetchAll(PDO::FETCH_OBJ);
-										foreach($result2 as $row_tech)
+										foreach($result2 as $row_resp)
 										{          
 									?>  
-										<option value="<?php echo htmlentities($row_tech->id_tech);?>">
-											<?php echo htmlentities($row_tech->libelle_tech);?>
+										<option value="<?php echo htmlentities($row_resp->id_resp);?>">
+											<?php echo htmlentities($row_resp->libelle_resp);?>
 										</option>
 									<?php
 										} 

@@ -33,7 +33,7 @@
 							</li>
 
 							<li> 
-								<a href="/london-academy/liste/technicien/technicien.php"><i class="la la-user"></i> <span>Technicien</span></a>
+								<a href="/london-academy/liste/responsable/responsable.php"><i class="la la-user"></i> <span>responsable</span></a>
 							</li>
 							
 							<li class="menu-title"> 

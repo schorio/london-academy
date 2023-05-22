@@ -13,7 +13,7 @@
 						<input type="hidden" name="supprimer_id" value="<?php echo htmlentities($row->id_sort); ?>">
 						<input type="hidden" name="quantite_sort" value="<?php echo htmlentities($row->quantite_sort); ?>">
 						<input type="hidden" name="piece_sort" value="<?php echo htmlentities($row->piece_sort); ?>">
-						<input type="hidden" name="technicien_sort" value="<?php echo htmlentities($row->technicien_sort); ?>">
+						<input type="hidden" name="responsable_sort" value="<?php echo htmlentities($row->responsable_sort); ?>">
 						<div class="row">
 							<div class="col-6">
 								<a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Annuler</a>

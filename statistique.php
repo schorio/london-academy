@@ -75,24 +75,24 @@
 
 
 
-	$sql_1 = mysqli_query($link, "SELECT * FROM technicien");
+	$sql_1 = mysqli_query($link, "SELECT * FROM responsable");
 	$i = $k = 0;
 
 	foreach($sql_1 as $data_1) {
-		$libelle_1[] = $data_1['libelle_tech'];
-		$id_1[] = $data_1['id_tech'];
+		$libelle_1[] = $data_1['libelle_resp'];
+		$id_1[] = $data_1['id_resp'];
 
-		$libelle_tech = $libelle_1[$i];
-		$id_tech = $id_1[$i];
+		$libelle_resp = $libelle_1[$i];
+		$id_resp = $id_1[$i];
 
-		if ($id_tech) {
+		if ($id_resp) {
 			$sql_month_1 = "SELECT SUM(quantite_sort) as somme_1 FROM sortie 
-						WHERE MONTH(date_sort)=:month and technicien_sort=:id_tech";
+						WHERE MONTH(date_sort)=:month and responsable_sort=:id_resp";
 			$query_month_1 = $dbh->prepare($sql_month_1);
 
 			for ($month_1 = 1; $month_1 <= 12; $month_1++) {
 				$query_month_1->bindParam(':month', $month_1, PDO::PARAM_INT);
-				$query_month_1->bindParam(':id_tech', $id_tech, PDO::PARAM_INT);
+				$query_month_1->bindParam(':id_resp', $id_resp, PDO::PARAM_INT);
 				$query_month_1->execute();
 				$row_month_1 = $query_month_1->fetch(PDO::FETCH_ASSOC);
 
@@ -154,11 +154,11 @@
 	$results_3 = $query_3->fetchAll(PDO::FETCH_OBJ);
 	$totalcount_produit = $query_3->rowCount();
 
-	$sql_4 = "SELECT id_tech from technicien";
+	$sql_4 = "SELECT id_resp from responsable";
 	$query_4 = $dbh->prepare($sql_4);
 	$query_4->execute();
 	$results_4 = $query_4->fetchAll(PDO::FETCH_OBJ);
-	$totalcount_technicien = $query_4->rowCount();
+	$totalcount_responsable = $query_4->rowCount();
 
 	$sql_5 = "SELECT id_frn from fournisseur";
 	$query_5 = $dbh->prepare($sql_5);
@@ -319,8 +319,8 @@
 												<p>Produit</p>
 											</div>
 											<div class="dash-stats-list">
-												<h4><?php echo $totalcount_technicien; ?></h4>
-												<p>Technicien</p>
+												<h4><?php echo $totalcount_responsable; ?></h4>
+												<p>responsable</p>
 											</div>
 										</div>
 										<div class="time-list">
