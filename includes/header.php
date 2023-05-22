@@ -9,7 +9,7 @@
 <div class="header">
 	<!-- Logo -->
 	<div class="header-left">
-		<a href="/london-academy/index.php" class="logo">
+		<a href="/london-academy/liste/fournisseur/fournisseur.php" class="logo">
 			<img src="/london-academy/assets/img/logo.png" width="53" height="40" alt="">
 			<!-- <i class="fa fa-modx"></i>EPN. -->
 		</a>
