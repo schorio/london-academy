@@ -271,7 +271,7 @@
 							<div class="card shadow mb-4">
                                 <div class="card-body">
                                     <div class="chart-area">
-                                        <canvas height="170px" id="myChart"></canvas>
+                                        <canvas height="200px" id="myChart"></canvas>
                                     </div><hr>
                                     <p>Diagramme des produits entrées</p>
                                 </div>
@@ -285,6 +285,7 @@
                                 </div>
                             </div>
 						</div>
+
 						<div class="col-lg-4 col-md-4 chart-p">
 							<div class="dash-sidebar">
 								<h5 class="dash-title">Montant</h5>
