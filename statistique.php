@@ -281,7 +281,7 @@
                                     <div class="chart-area">
                                         <canvas height="170px" id="myChart_1"></canvas>
                                     </div><hr>
-                                    <p>Diagramme des produits entrées</p>
+                                    <p>Diagramme des produits sorties</p>
                                 </div>
                             </div>
 						</div>
