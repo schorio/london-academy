@@ -33,7 +33,7 @@
 							</li>
 
 							<li> 
-								<a href="/london-academy/liste/responsable/responsable.php"><i class="la la-user"></i> <span>responsable</span></a>
+								<a href="/london-academy/liste/responsable/responsable.php"><i class="la la-user"></i> <span>Responsable</span></a>
 							</li>
 							
 							<li class="menu-title"> 
