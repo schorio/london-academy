@@ -26,6 +26,12 @@
 						</div>
 						<div class="col-sm-12">
 							<div class="form-group">
+								<label for="n_nom_technicien">Fonction : </label>
+								<input type="text" class="form-control" id="n_fonction_tech" name="n_fonction_tech" value="<?php echo htmlentities($row->fonction_tech); ?>" autofocus>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
 								<label for="n_nom_technicien">Observation : </label>
 								<input type="text" class="form-control" id="n_observation_tech" name="n_observation_tech" value="<?php echo htmlentities($row->observation_tech); ?>" autofocus>
 							</div>
@@ -33,7 +39,7 @@
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="n_nom_technicien">Image : </label>
-								<input type="text" class="form-control" id="n_image_tech" name="n_image_tech" value="<?php echo htmlentities($row->image_tech); ?>" readonly>
+								<input type="file" class="form-control" id="n_image_tech" name="n_image_tech" value="<?php echo htmlentities($row->image_tech); ?>">
 							</div>
 						</div>
 					</div>

@@ -125,10 +125,9 @@
 									</div>
 								<div>
 									<h4 class="user-name m-t-10 mb-0 text-ellipsis"><?php echo htmlentities($row->libelle_tech); ?></h4>
-									<h6 class="user-name text-ellipsis"><?php echo htmlentities($row->libelle_tech); ?></h6>
 								</div>
 								<div class="small text-muted" style="font-weight: 500">
-									fonction
+									<?php echo htmlentities($row->fonction_tech); ?>
 								</div>
 							</div>
 						</div>	

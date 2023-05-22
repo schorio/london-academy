@@ -15,6 +15,10 @@
 						<input name="libelle_tech" required class="form-control" type="text">
 					</div>
 					<div class="form-group">
+						<label>Fonction <span class="text-danger">*</span></label>
+						<input name="fonction_tech" required class="form-control" type="text">
+					</div>
+					<div class="form-group">
 						<label>Image <span class="text-danger">*</span></label>
 						<input class="form-control" required name="image_tech" type="file">
 					</div>

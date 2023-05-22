@@ -5,6 +5,7 @@
     if(isset($_POST['ajouter_tech'])){
 
         $libelle_tech = htmlspecialchars($_POST['libelle_tech']);
+        $fonction_tech = htmlspecialchars($_POST['fonction_tech']);
         $image_tech = htmlspecialchars($_POST['image_tech']);
         //grabbing the picture
         $file = $_FILES['image_tech']['name'];
@@ -17,10 +18,11 @@
             $image_tech=$final_file;
         }
 
-        $sql = "INSERT INTO `technicien` (`libelle_tech`,  `image_tech`) 
-                                    VALUES (:libelle_tech,  :pic)";
+        $sql = "INSERT INTO `technicien` (`libelle_tech`, `fonction_tech`,  `image_tech`) 
+                                    VALUES (:libelle_tech, :fonction_tech,  :pic)";
         $query = $dbh->prepare($sql);
         $query->bindParam(':libelle_tech',$libelle_tech,PDO::PARAM_STR);
+        $query->bindParam(':fonction_tech',$fonction_tech,PDO::PARAM_STR);
         $query->bindParam(':pic',$image_tech,PDO::PARAM_STR);
         $query->execute();
         $lastInsert = $dbh->lastInsertId();
@@ -47,9 +49,11 @@
     if(isset($_POST['modifier_tech'])){
 		$modifier_id = $_POST['modifier_id'];
 		$n_libelle_tech = $_POST['n_libelle_tech'];
+        $n_fonction_tech = $_POST['n_fonction_tech'];
 		$n_observation_tech = $_POST['n_observation_tech'];
 		$sql = "UPDATE technicien SET 
 			libelle_tech='$n_libelle_tech',
+            fonction_tech='$n_fonction_tech',
 			observation_tech='$n_observation_tech'
 			WHERE id_tech='$modifier_id' ";
 		if ($conn->query($sql) === TRUE) {

@@ -135,7 +135,7 @@
 													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_tech); ?> "> <?php echo htmlentities($row->libelle_tech); ?><span><?php echo htmlentities($row->libelle_tech); ?></span></a>
 												</h2>
 											</td>														
-											<td>indisponible</td>
+											<td><?php echo htmlentities($row->fonction_tech); ?></td>
 											<td><?php echo htmlentities($row->nbSortie_tech); ?></td>
 											<td><?php echo htmlentities($row->observation_tech); ?></td>
 											<td class="text-right">
