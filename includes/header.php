@@ -11,7 +11,7 @@
 	<div class="header-left">
 		<a href="/london-academy/liste/fournisseur/fournisseur.php" class="logo">
 			<img src="/london-academy/assets/img/logo.png" width="53" height="40" alt="">
-			<!-- <i class="fa fa-modx"></i>EPN. -->
+			<!-- <i class="fa fa-modx"></i>London Academy. -->
 		</a>
 	</div>
 	<!-- /Logo -->

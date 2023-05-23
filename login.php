@@ -13,7 +13,7 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
 		<meta name="author" content="Dreamguys - Bootstrap Admin Template">
 		<meta name="robots" content="noindex, nofollow">
-		<title>Login - EPN</title>
+		<title>Login - London Academy</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo.png">
@@ -48,7 +48,7 @@
 						<div class="account-wrapper">
 							<div class="account-logo">
 								<a href="index.php"><img src="assets/img/logo.png" width="170" height="105" alt="Company Logo"></a>
-								<!-- <a class="logo_2"><i class="fa fa-modx"></i>EPN.</a> -->
+								<!-- <a class="logo_2"><i class="fa fa-modx"></i>London Academy.</a> -->
 								
 							</div>
 							<h3 class="account-title">Login Administrateur </h3>
