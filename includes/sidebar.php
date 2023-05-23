@@ -2,14 +2,6 @@
                 <div class="sidebar-inner slimscroll">
 					<div id="sidebar-menu" class="sidebar-menu">
 						<ul>
-							<li class="menu-title"> 
-								<span>Principale</span>
-							</li>
-
-
-							<li>
-								<a href="/london-academy/statistique.php"><i class="la la-dashboard"></i> <span> Dashboard</span></a>
-							</li>
 							
 
 							<li class="menu-title"> 

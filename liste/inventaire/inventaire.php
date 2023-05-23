@@ -82,6 +82,17 @@
 						</div>
 					</div>
 					<!-- /Page Header -->
+
+					<!-- Search Filter -->
+					<div class="row filter-row">
+						<div class="col-sm-6 col-md-8">  
+							<div class="form-group form-focus">
+								<input type="text" name="search_1" id="search_1" class="form-control floating">
+								<label class="focus-label">Entrer les mots clés</label>
+							</div>
+						</div>
+                    </div>
+					<!-- Search Filter -->
 					
 					<!-- user profiles list starts her -->
 					<div class="row">
@@ -101,7 +112,7 @@
 										{	
 											
 									?>
-								<div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
+								<div class="col-lg-4 col-sm-6 col-12 col-md-4 col-xl-3">
 									<div class="card">
 										<div class="card-body">
 
@@ -182,6 +193,9 @@
 
 		<!-- Custom JS -->
 		<script src="../../assets/js/app.js"></script>
+
+		<!-- Recherche instantannée -->
+		<script src="../../assets/js/recherche.js"></script>
 		
     </body>
 </html>
