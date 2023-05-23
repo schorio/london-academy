@@ -16,7 +16,7 @@
 		{
 			foreach ($results as $row) 
 			{
-				if ($password == $row->password_ut) 
+				if (md5($password) == $row->password_ut) 
 				{
 					// }//verifying Password
 					// if (password_verify($password, $hashpass)) {
