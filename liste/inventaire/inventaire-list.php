@@ -139,7 +139,7 @@
 										<tr>
 											<td>
 												<h2 class="table-avatar">
-													<a href="/london-academy/profile.php?id=<?php echo htmlentities($row->id_inv); ?> "> <?php echo htmlentities($row->piece_inv); ?><span><?php echo htmlentities($row->libelle_frn); ?></span></a>
+													<a href=""> <?php echo htmlentities($row->piece_inv); ?><span><?php echo htmlentities($row->libelle_frn); ?></span></a>
 												</h2>
 											</td>														
 											<td><?php echo htmlentities($row->libelle_cat); ?></td>
@@ -249,37 +249,3 @@
 
     </body>
 </html>
-
-
-
-
-
-
-
-
-<!-- <tbody>
-	<tr>
-		<td>
-			<h2 class="table-avatar">
-				<a href="profile.php?id='.$id_inventaire.'" class="avatar"><img alt="image" src="inventaire/'.$image.'"></a>
-				<a href="profile.php?id='.$id_inventaire.' ">'.$nom.'." ".'.$prenom.'<span>'.$code_departement.'</span></a>
-			</h2>
-		</td>
-		<td>'.$matricule.'</td>
-		<td>'.$code_categorie.'</td>
-		<td>'.$code_statut.'</td>
-		<td>'.$code_grade.'</td>
-		<td>'.$n_d_avancement.'</td>
-		<td>'.$n_d_f_contrat.'</td>
-		<td>'.$n_d_d_retraite.'</td>
-		<td class="text-right">
-			<div class="dropdown dropdown-action">
-				<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-				<div class="dropdown-menu dropdown-menu-right">
-					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_inventaire'.$id_inventaire.'"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
-					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_inventaire'.$id_inventaire.'"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
-				</div>
-			</div>
-		</td>
-	</tr>
-</tbody> -->

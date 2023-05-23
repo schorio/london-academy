@@ -124,8 +124,8 @@
 														<tr>
 															<td>
 																<h2 class="table-avatar">
-																	<a href="profile.php?id='.$row["id_ut"].'" class="avatar"><img alt="image" src="/london-academy/assets/img/utilisateur/'.$row["image_ut"].'"></a>
-																	<a href="profile.php?id='.$row["id_ut"].' "> '.$row["nom_ut"].'  '.$row["prenom_ut"].'<span>'.$row["username_ut"].'</span></a>
+																	<a href="" class="avatar"><img alt="image" src="/london-academy/assets/img/utilisateur/'.$row["image_ut"].'"></a>
+																	<a href=""> '.$row["nom_ut"].'  '.$row["prenom_ut"].'<span>'.$row["username_ut"].'</span></a>
 																</h2>
 															</td>														
 															<td>'.$row["username_ut"].'</td>
