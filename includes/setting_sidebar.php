@@ -11,21 +11,20 @@
 	<div class="sidebar-inner slimscroll">
 		<div class="sidebar-menu">
 			<ul>
+
+				<li class="menu-title"> </li>
+
 				<li> 
 					<a href="/london-academy/liste/fournisseur/fournisseur.php"><i class="la la-home"></i> <span>Retour a l'accueil</span></a>
 				</li>
 				
 				<li class="menu-title"> </li>
+				<li class="menu-title"> </li>
+				<li class="menu-title"> </li>
 				
 				<li class="menu-title">Paramètres</li>
 				
 				<li class="menu-title"> </li>
-				
-				<li> 
-					<a href="#" data-toggle="modal" data-target="#modifier_ut<?php echo $row["id_ut"]; ?>"><i class="la la-user"></i> <span>Profile</span></a>
-					<!-- <a href="changer_info_ut.php"><i class="la la-user"></i> <span>Profile</span></a> -->
-				</li>
-				
 				<li class="menu-title"> </li>
 				<li class="menu-title"> </li>
 
