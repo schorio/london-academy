@@ -1,5 +1,5 @@
 <div id="modifier_responsable<?php echo htmlentities($row->id_resp); ?>" class="modal custom-modal fade" role="dialog">
-	<form method="post" class="form-horizontal" role="form">
+	<form id="sampleForm" name="sampleForm" method="POST" enctype="multipart/form-data">
 		<div class="modal-dialog modal-dialog-centered modal-lg">
 			<!-- Modal content-->
 			<div class="modal-content">
@@ -45,7 +45,8 @@
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="n_nom_responsable">Image : </label>
-								<input type="file" class="form-control" id="n_image_resp" name="n_image_resp" value="<?php echo htmlentities($row->image_resp); ?>">
+								<input type="hidden" class="form-control" id="old_image_resp" name="old_image_resp" value="<?php echo htmlentities($row->image_resp); ?>">
+								<input type="file" class="form-control" id="n_image_resp" name="n_image_resp">
 							</div>
 						</div>
 					</div>
