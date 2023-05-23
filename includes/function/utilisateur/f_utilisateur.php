@@ -7,7 +7,7 @@
         $row = $query->fetch(PDO::FETCH_ASSOC);
         $mdp = $row['password_ut'];
 
-        $a_mdp = $_POST['a_mdp'];
+        $a_mdp = md5($_POST['a_mdp']);
 		$n_mdp = md5($_POST['n_mdp']);
 		$n__mdp = md5($_POST['n__mdp']);
 
