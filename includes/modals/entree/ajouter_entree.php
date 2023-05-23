@@ -17,7 +17,8 @@
 								<select id="piece_ent" required name="piece_ent" class="select action">
 									<option>Selectionner le produit </option>
 									<?php 
-										$sql2 = "SELECT * from inventaire";
+										$sql2 = "SELECT * from inventaire 
+													JOIN fournisseur ON fournisseur_inv=id_frn";
 										$query2 = $dbh -> prepare($sql2);
 										$query2->execute();
 										$result2=$query2->fetchAll(PDO::FETCH_OBJ);
@@ -25,7 +26,10 @@
 										{          
 									?>  
 										<option value="<?php echo htmlentities($row_inv->id_inv);?>">
-									<?php echo htmlentities($row_inv->piece_inv);?></option>
+											<?php echo htmlentities($row_inv->piece_inv);?> -
+											<?php echo htmlentities($row_inv->description_inv);?> -
+											<?php echo htmlentities($row_inv->libelle_frn);?>
+										</option>
 									<?php
 										} 
 									?> 
