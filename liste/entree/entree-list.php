@@ -145,8 +145,8 @@
 											<td><?php echo htmlentities($row->reference_ent); ?></td>
 											<td><?php echo htmlentities($row->libelle_frn); ?></td>
 											<td><?php echo htmlentities($row->quantite_ent); ?></td>
-											<td><?php echo htmlentities($row->pu_ent); ?></td>
-											<td><?php echo htmlentities($row->montant_ent); ?></td>
+											<td><?php echo htmlentities($row->pu_ent); ?> Mad</td>
+											<td><?php echo htmlentities($row->montant_ent); ?> Mad</td>
 											<td><?php echo htmlentities($row->date_ent); ?></td>
 											<td><?php echo htmlentities($row->observation_ent); ?></td>
 											<td class="text-right">

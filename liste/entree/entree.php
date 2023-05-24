@@ -132,7 +132,7 @@
 											</small><br><br>
 
 											<h6 class="total">TOTAL : 
-												<br><span class="text-muted"><?php echo htmlentities($row->montant_ent); ?> $</span>
+												<br><span class="text-muted"><?php echo htmlentities($row->montant_ent); ?> Mad</span>
 											</h6>
 											
 											<p>

@@ -126,7 +126,7 @@
 											<p>
 												<h4><span class="text-muted">Chiffre d'affaire</span></h4>
 												<small class="block text-ellipsis m-b-15">
-													<span class="text-muted">jusqu'à </span> <span class="text-xs"><?php echo htmlentities($row->ca_frn); ?> $</span>
+													<span class="text-muted">jusqu'à </span> <span class="text-xs"><?php echo htmlentities($row->ca_frn); ?> Mad</span>
 												</small>
 											</p>
 
