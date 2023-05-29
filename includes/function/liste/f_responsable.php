@@ -54,25 +54,23 @@
         $n_matricule_resp = $_POST['n_matricule_resp'];
         $n_fonction_resp = $_POST['n_fonction_resp'];
 		$n_observation_resp = $_POST['n_observation_resp'];
-        $n_image_resp = $_POST['n_image_resp'];
         $old_image_resp = $_POST['old_image_resp'];
 
-        $file_ = $_FILES['n_image_resp']['name'];
-        $file_loc_ = $_FILES['n_image_resp']['tmp_name'];
+        $file = $_FILES['n_image_resp']['name'];
+        $file_loc = $_FILES['n_image_resp']['tmp_name'];
+        $folder="../../assets/img/responsable/";
+        $new_file_name = strtolower($file);
+        $final_file=str_replace(' ','-',$new_file_name);
 
-        if(!$n_image_resp) {
-            $picture = $old_image_resp;
+        if(move_uploaded_file($file_loc,$folder.$final_file)){
+            $image=$final_file;
+        }
 
-        } else {
-            $file = $file_;
-            $file_loc = $file_loc_;
-            $folder="../../assets/img/responsable/"; 
-            $new_file_name = strtolower($file);
-            $final_file=str_replace(' ','-',$new_file_name);
-
-            if(move_uploaded_file($file_loc,$folder.$final_file)){
-                $picture = $final_file;
-            }
+        if (empty($image)){
+            $pic = $old_image_resp;
+        }
+        else{
+            $pic = $image;
         }
 
 
@@ -81,7 +79,7 @@
             matricule_resp='$n_matricule_resp',
             fonction_resp='$n_fonction_resp',
 			observation_resp='$n_observation_resp',
-            image_resp='$picture'
+            image_resp='$pic'
 			WHERE id_resp='$modifier_id' ";
 		if ($conn->query($sql) === TRUE) {
 			echo '<script>window.location.href="/london-academy/liste/responsable/responsable.php"</script>';
