@@ -1,5 +1,9 @@
 <?php
 
+	if(strlen($_SESSION['userlogin'])==0){
+		header('location:/london-academy/includes/function/connection/login.php');
+	}
+
     if(isset($_POST['ajouter_frn'])){
 		$libelle_frn = htmlspecialchars($_POST['libelle_frn']);
 		$sql = "INSERT INTO `fournisseur`(`libelle_frn`) VALUES (:libelle_frn)";

@@ -3,8 +3,8 @@
 	error_reporting(0);
 	include_once('../../includes/config.php');
 	include_once('../../includes/function/liste/f_categorie.php');
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

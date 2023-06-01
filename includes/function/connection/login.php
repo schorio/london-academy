@@ -1,9 +1,10 @@
 <?php
 	session_start();
 	error_reporting(0);
-	include_once("includes/config.php");
-	include_once("includes/function/connection/f_login.php");
+	include_once('../../config.php');
+	include_once('f_login.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 		<head>
@@ -16,21 +17,21 @@
 		<title>Login - London Academy</title>
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo.png">
+        <link rel="shortcut icon" type="image/x-icon" href="/london-academy/assets/img/logo.png">
 		
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/london-academy/assets/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/london-academy/assets/css/font-awesome.min.css">
 		
 		<!-- Main CSS -->
-		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="/london-academy/assets/css/style.css">
 		
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
+			<script src="/london-academy/assets/js/html5shiv.min.js"></script>
+			<script src="/london-academy/assets/js/respond.min.js"></script>
 		<![endif]-->
 	</head>
 	<body class="account-page">
@@ -47,9 +48,7 @@
 						<!-- /Account Logo -->
 						<div class="account-wrapper">
 							<div class="account-logo">
-								<a href="index.php"><img src="assets/img/logo.png" width="170" height="105" alt="Company Logo"></a>
-								<!-- <a class="logo_2"><i class="fa fa-modx"></i>London Academy.</a> -->
-								
+								<a href="index.php"><img src="/london-academy/assets/img/logo.png" width="170" height="105" alt="Company Logo"></a>								
 							</div>
 							<h3 class="account-title">Login Administrateur </h3>
 							<!-- Account Form -->
@@ -71,11 +70,6 @@
 								
 								<div class="form-group text-center">
 									<button class="btn btn-primary account-btn" name="login" type="submit">Login</button>
-										<!-- <div class="col-auto pt-2">
-											<a class="text-muted float-right" href="forgot-password.php">
-												Mot de passe oublié?
-											</a>
-										</div> -->
 								</div>
 							</form>
 							<!-- /Account Form -->
@@ -88,14 +82,14 @@
 		<!-- /Main Wrapper -->
 		
 		<!-- jQuery -->
-		<script src="assets/js/jquery-3.2.1.min.js"></script>
+		<script src="/london-academy/assets/js/jquery-3.2.1.min.js"></script>
 		
 		<!-- Bootstrap Core JS -->
-		<script src="assets/js/popper.min.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="/london-academy/assets/js/popper.min.js"></script>
+		<script src="/london-academy/assets/js/bootstrap.min.js"></script>
 		
 		<!-- Custom JS -->
-		<script src="assets/js/app.js"></script>
+		<script src="/london-academy/assets/js/app.js"></script>
 		
 	</body>
 </html>

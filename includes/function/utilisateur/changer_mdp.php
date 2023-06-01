@@ -3,9 +3,6 @@
 	error_reporting(0);
 	include_once('../../../includes/config.php');
 	include_once 'f_utilisateur.php';
-	if(strlen($_SESSION['userlogin'])==0){
-		header('location: ../../../login.php');
-	}
 	
  ?>
 <!DOCTYPE html>

@@ -1,4 +1,9 @@
 <?php
+
+    if(strlen($_SESSION['userlogin'])==0){
+        header('location:/london-academy/includes/function/connection/login.php');
+    }
+
     if(isset($_POST['changer_mdp'])){
 
         $sql = "SELECT password_ut as password_ut FROM utilisateur WHERE username_ut='admin'";

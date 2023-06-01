@@ -1,10 +1,9 @@
  <?php   
-    if($_SESSION['userlogin']>0){
-		header('location:index.php');
+    if(strlen($_SESSION['userlogin']) > 0){
+		header('location:/london-academy/liste/fournisseur/fournisseur.php');
 	}
 	elseif(isset($_POST['login'])) 
 	{
-		// $_SESSION['userlogin'] = $_POST['username'];
 		$username = htmlspecialchars($_POST['username']);
 		$password = htmlspecialchars($_POST['password']);
 		$sql = "SELECT * from utilisateur where username_ut=:username";
@@ -18,13 +17,10 @@
 			{
 				if (md5($password) == $row->password_ut) 
 				{
-					// }//verifying Password
-					// if (password_verify($password, $hashpass)) {
 					session_start();
 					$_SESSION['userlogin']=$row->username_ut;
 					$_SESSION['id_ut']=$row->id_ut;
-					// $_SESSION['role']=$row->role_ut;
-					// $_SESSION['departement']=$row->departement_ut;
+
 					echo "<script>window.location.href='/london-academy/liste/fournisseur/fournisseur.php'; </script>";
 				}
 				else 

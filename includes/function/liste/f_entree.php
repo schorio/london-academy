@@ -1,5 +1,9 @@
 <?php
 
+    if(strlen($_SESSION['userlogin'])==0){
+        header('location:/london-academy/includes/function/connection/login.php');
+    }
+
     if(isset($_POST['ajouter_ent'])){
         $piece_ent = htmlspecialchars($_POST['piece_ent']);
         $reference_ent = htmlspecialchars($_POST['reference_ent']);

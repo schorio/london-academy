@@ -1,5 +1,9 @@
 <?php
 
+	if(strlen($_SESSION['userlogin'])==0){
+		header('location:/london-academy/includes/function/connection/login.php');
+	}
+
     if(isset($_POST['ajouter_inv'])){
 		$piece_inv = htmlspecialchars($_POST['piece_inv']);
         $fournisseur_inv = htmlspecialchars($_POST['fournisseur_inv']);

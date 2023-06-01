@@ -6,7 +6,6 @@ $config = [
     "DB_NAME" => "london-academy",
     "DB_USER" => "root",
     "DB_PASSWORD" => "",
-    "ROLES" => ["admin","visiteur"],
 ];
 
 

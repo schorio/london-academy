@@ -1,4 +1,9 @@
 <?php
+
+	if(strlen($_SESSION['userlogin'])==0){
+		header('location:/london-academy/includes/function/connection/login.php');
+	}
+
     if(isset($_POST['ajouter_cat'])){
 		$libelle_cat = htmlspecialchars($_POST['libelle_cat']);
 		$sql = "INSERT INTO `categorie`(`libelle_cat`) VALUES (:libelle_cat)";
